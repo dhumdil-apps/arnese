@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.less']
+    selector: 'arnese-app',
+    template: '<main></main>'
 })
-export class AppComponent {
-    title = 'Arnese';
-}
+export class AppComponent {}

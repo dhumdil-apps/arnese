@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'header',
+    templateUrl: './header.html',
+    styleUrls: ['./header.less']
+})
+
+export class HeaderComponent {
+
+    /*
+
+     Spoločnosť ARNESE s.r.o.
+
+     vznikla v roku 2009. Hlavnou činnosťou spoločnosti je predaj nástrojov pre vŕtanie, frézovanie, sústruženie, závitovanie, upínacie náradie, ručné náradie, brusivo a meradlá.
+
+     Ponúkame komplexné riešenie výroby rezného náradia od návrhu koncepcie, cez výkresovú dokumentáciu, až po jeho výrobu a ostrenie vrátane povlaku.
+
+     Ponúkame kusovú a malosériovú výrobu dielcov podľa požiadaviek zákazníka, podľa dodanej výkresovej dokumentácie a taktiež na základe požiadaviek zákazníka.
+
+     ZAMERANIE:
+     - obchodná činnosť
+     - predaj nástrojov a náradia
+     - strojárska výroba
+
+     */
+
+}
