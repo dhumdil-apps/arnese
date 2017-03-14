@@ -1,0 +1,13 @@
+<div class="content">
+
+    <div *ngFor="let product of products"
+         (click)="selectProduct(product['name'])"
+         class="products">
+         <span class="product">{{ product['name'] }}</span>
+    </div>
+
+    <item [selectedPDF]="selectedPDF"
+          [loading]="loading"
+    ></item>
+
+</div>

@@ -1,13 +1,7 @@
-<div class="main layout-row">
+<div class="main">
 
-    <div style="max-width: 200px; margin-right: 100px;">
-        <button *ngFor="let product of products" (click)="selectProduct(product['name'])">{{ product['name'] }}</button>
-    </div>
-
-    <pdf-viewer [src]="selectedPDF"
-                [page]="1"
-                [original-size]="true"
-                style="display: block;"
-    ></pdf-viewer>
+    <header></header>
+    <content></content>
+    <footer></footer>
 
 </div>

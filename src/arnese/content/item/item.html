@@ -1,0 +1,34 @@
+<div class="item">
+
+    <div class="layout-row">
+        <pdf-viewer [src]="selectedPDF"
+                    [page]="pageIndex"
+                    [original-size]="false"
+                    [render-text]="true"
+                    (after-load-complete)="afterLoadPDF($event)"
+                    class="pdf"
+        ></pdf-viewer>
+    </div>
+
+    <div class="layout-row">
+        <div *ngIf="totalPages > 0" class="layout-row layout-center">
+            <h1 (click)="previousPage()" style="padding: 0 10px">-</h1>
+
+            <h1>
+                <input placeholder="{{ pageIndex }}"
+                       [disabled]="loading"
+                       [(ngModel)]="pageIndex"
+                       type="text"
+                />
+                <span>/ {{ totalPages }}</span>
+            </h1>
+
+            <h1 (click)="nextPage()" style="padding: 0 10px">+</h1>
+        </div>
+
+        <div *ngIf="loading" class="uil-ring-css loader layout-center" style="transform:scale(1);">
+            <div></div>
+        </div>
+    </div>
+
+</div>
