@@ -1,7 +1,23 @@
-<div class="main">
+<div #container class="main">
 
-    <header></header>
+    <div class="header">
+        <header></header>
+        <div #header class="header_after"></div>
+    </div>
+
     <content></content>
-    <footer></footer>
+
+    <div style="position: fixed; top: calc(50% - 50px); height: 100px; font-size: 30px; text-align: center; width: 100%;">
+        <span style="padding: 100px 0">
+            <span style="text-align: left">w: {{ W }}</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span style="text-align: right">h: {{ H }}</span>
+        </span>
+    </div>
+
+    <div class="footer">
+        <div #footer class="footer_before"></div>
+        <footer></footer>
+    </div>
 
 </div>

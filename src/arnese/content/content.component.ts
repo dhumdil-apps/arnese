@@ -25,9 +25,4 @@ export class ContentComponent implements OnInit {
         this.productService.getProducts().then(products => this.products = products);
     }
 
-    public selectProduct(filename: string): void {
-        this.loading = true;
-        this.selectedPDF = 'assets/pdf/' + filename + '.pdf';
-    }
-
 }

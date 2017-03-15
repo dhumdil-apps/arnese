@@ -1,5 +1,56 @@
+@import url("../assets/css/variables");
+
 .main {
-    position: relative;
+    height: 1000px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: #fff;
+    height: 0px; // scroll
+    background: @dark;
+    z-index: 100;
+
+    &_after {
+        display: block;
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 0 solid transparent;
+        border-top: 50px solid @dark;
+    }
+}
+
+content {
+    position: fixed;
+    width: 100%;
+    height: ~"calc(100% - 100px)";
+    margin: 50px 0;
+    //background: #369;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0px; // scroll
+    background: @dark;
+
+    &_before {
+        display: block;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 0 solid transparent;
+        border-right: 0 solid transparent;
+        border-bottom: 50px solid @dark;
+    }
 }

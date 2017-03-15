@@ -9,12 +9,9 @@ import { AppComponent } from './app.component';
 import { MainComponent } from '../arnese/main.component';
 import { HeaderComponent } from '../arnese/header/header.component';
 import { ContentComponent } from '../arnese/content/content.component';
-import { ItemComponent } from '../arnese/content/item/item.component';
+import { PdfComponent } from '../arnese/content/pdf/pdf.component';
 import { FooterComponent } from '../arnese/footer/footer.component';
 import { ProductService } from '../arnese/products/products.service';
-
-// ng2-pdf-viewer
-import { PdfViewerComponent } from 'ng2-pdf-viewer';
 
 @NgModule({
     declarations: [
@@ -22,9 +19,8 @@ import { PdfViewerComponent } from 'ng2-pdf-viewer';
         MainComponent,
         HeaderComponent,
         ContentComponent,
-        ItemComponent,
-        FooterComponent,
-        PdfViewerComponent
+        PdfComponent,
+        FooterComponent
     ],
     imports: [
         BrowserModule,
