@@ -8,37 +8,48 @@ import { Component, HostListener, ViewChild } from '@angular/core';
 
 export class MainComponent {
 
+    /**
+     * Manage app width, height & scroll
+     */
+
+    // bind elements
     @ViewChild('container') container;
     @ViewChild('header') header;
     @ViewChild('footer') footer;
 
+    // listen for scroll
     @HostListener('window:scroll', ['$event']) onScroll(ev) {
-        this.setHeight();
+        this.setScroller();
     }
 
+    // listen for resize
     @HostListener('window:resize', ['$event']) onResize(ev) {
-        this.setWidth();
-        this.setHeight();
+        this.setDimensions();
+        this.setScroller();
     }
 
+    // init width/height
     ngAfterViewInit() {
-        this.setWidth();
-        this.setHeight();
+        this.setDimensions();
+        this.setScroller();
     }
 
-    /**
-     * Init header & footer shape
-     */
-    private setWidth(): void {
+    // on resize, fix width/height
+    private setDimensions(): void {
+
+        // set width
         let w = this.container.nativeElement.offsetWidth + 'px solid transparent';
         this.header.nativeElement.style.borderLeft = w;
         this.footer.nativeElement.style.borderRight = w;
+
+        // set height
+        let h =  this.container.nativeElement.offsetParent.parentElement.clientHeight;
+        this.container.nativeElement.style.height = h + 100 + "px";
+
     }
 
-    /**
-     * Animate scroll
-     */
-    private setHeight(): void {
+    // on scroll, hide/show header/footer
+    private setScroller(): void {
 
         let element = this.container.nativeElement.clientHeight;
         let browser = this.container.nativeElement.offsetParent.parentElement.clientHeight;

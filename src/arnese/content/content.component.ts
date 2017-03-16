@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { ProductService } from '../../arnese/products/products.service';
-import { Product } from '../../arnese/products/product.model';
 
 @Component({
     selector: 'content',
@@ -9,20 +7,6 @@ import { Product } from '../../arnese/products/product.model';
     styleUrls: ['./content.less']
 })
 
-export class ContentComponent implements OnInit {
-
-    public products: Product[];
-    public selectedPDF: string;
-    public loading: boolean = false;
-
-    constructor(private productService: ProductService) {}
-
-    ngOnInit(): void {
-        this.getProducts();
-    }
-
-    private getProducts(): void {
-        this.productService.getProducts().then(products => this.products = products);
-    }
+export class ContentComponent {
 
 }

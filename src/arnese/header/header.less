@@ -1,5 +1,29 @@
 @import url("../../assets/css/variables");
 
-.header {
+.header-wrapper {
+    margin: 20px;
+    height: 100%;
+    overflow-y: hidden;
+    color: @white;
 
+    &__link {
+        flex: 1;
+        margin: auto 5px;
+        padding: 5px;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+}
+
+.layout-row {
+    display: flex;
+}
+
+.layout-center {
+    margin: auto;
 }
