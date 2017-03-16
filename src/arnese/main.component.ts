@@ -8,13 +8,6 @@ import { Component, HostListener, ViewChild } from '@angular/core';
 
 export class MainComponent {
 
-    public W: string;
-    public H: string;
-
-    constructor() {
-        // console.log(window);
-    }
-
     @ViewChild('container') container;
     @ViewChild('header') header;
     @ViewChild('footer') footer;
@@ -25,6 +18,7 @@ export class MainComponent {
 
     @HostListener('window:resize', ['$event']) onResize(ev) {
         this.setWidth();
+        this.setHeight();
     }
 
     ngAfterViewInit() {
@@ -33,40 +27,39 @@ export class MainComponent {
     }
 
     /**
-     * Init header & footer style
+     * Init header & footer shape
      */
     private setWidth(): void {
-        // console.log( this.container.nativeElement.offsetWidth );
-        let w = this.container.nativeElement.offsetWidth;
-        // console.log(w + 'px');
-        this.W = w + 'px';
-        w += 'px solid transparent';
-
+        let w = this.container.nativeElement.offsetWidth + 'px solid transparent';
         this.header.nativeElement.style.borderLeft = w;
         this.footer.nativeElement.style.borderRight = w;
     }
 
+    /**
+     * Animate scroll
+     */
     private setHeight(): void {
 
         let element = this.container.nativeElement.clientHeight;
         let browser = window.innerHeight;
         let scrolled = window.scrollY;
+        let total;
+        let percentage;
+        let h;
 
         if ( browser > element ) {
-
-            // console.log(100 + '%');
-            this.H = 100 + '%';
-
+            percentage = 100;
         } else {
-
-            let total = element - browser;
-            let percentage = Math.floor((scrolled * 100) / total);
-
-            // console.log(percentage + '%');
-            this.H = percentage + '%';
-
+            total = element - browser;
+            percentage = Math.floor((scrolled * 100) / total);
         }
 
+        total = browser/2 - 100;
+        h = Math.floor((total * percentage) / 100);
+        h = total-h;
+
+        this.header.nativeElement.offsetParent.style.height = h + "px";
+        this.footer.nativeElement.offsetParent.style.height = h + "px";
     }
 
 }
