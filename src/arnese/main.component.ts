@@ -41,11 +41,12 @@ export class MainComponent {
     private setHeight(): void {
 
         let element = this.container.nativeElement.clientHeight;
-        let browser = window.innerHeight;
-        let scrolled = window.scrollY;
+        let browser = this.container.nativeElement.offsetParent.parentElement.clientHeight;
+        let scrolled = this.container.nativeElement.offsetParent.scrollTop;
+
         let total;
         let percentage;
-        let h;
+        let height;
 
         if ( browser > element ) {
             percentage = 100;
@@ -55,11 +56,11 @@ export class MainComponent {
         }
 
         total = browser/2 - 100;
-        h = Math.floor((total * percentage) / 100);
-        h = total-h;
+        height = Math.floor((total * percentage) / 100);
+        height = (total - height) + "px";
 
-        this.header.nativeElement.offsetParent.style.height = h + "px";
-        this.footer.nativeElement.offsetParent.style.height = h + "px";
+        this.header.nativeElement.offsetParent.style.height = height;
+        this.footer.nativeElement.offsetParent.style.height = height;
     }
 
 }
