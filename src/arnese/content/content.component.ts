@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
 })
 
 export class ContentComponent {
+
+    public activeLink: string = '';
+
+    @Input('activeLink') link: string;
+
+    ngAffterViewInit() {
+        this.activeLink = this.link;
+    }
 
 }

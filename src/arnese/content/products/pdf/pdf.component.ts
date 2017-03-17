@@ -10,6 +10,6 @@ import { Product } from '../../products/product.model';
 
 export class PdfComponent {
 
-    @Input() pdf: Product;
+    @Input('pdf') pdf: Product;
 
 }

@@ -11,6 +11,16 @@ import { Component, HostListener, ViewChild } from '@angular/core';
  */
 export class MainComponent {
 
+    public main: any;
+
+    constructor() {
+        this.main = {
+            'router': {
+                'active-link': 'home'
+            }
+        }
+    }
+
     // bind elements
     @ViewChild('container') container;
     @ViewChild('header') header;
@@ -70,6 +80,13 @@ export class MainComponent {
         this.header.nativeElement.offsetParent.style.transform = "translateY(-" + size + "px)";
         this.footer.nativeElement.offsetParent.style.transform = "translateY(" + size + "px)";
 
+    }
+
+    /**
+     * Simulate Router
+     */
+    public activateLink(link: string): void {
+        this.main.router['active-link'] = link;
     }
 
 }

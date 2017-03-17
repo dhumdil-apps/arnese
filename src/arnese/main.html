@@ -1,15 +1,28 @@
 <div #container class="main">
 
     <div class="header">
-        <header class="full-size"></header>
+        
+        <!-- HEADER -->
+        <header class="full-size"
+                (activate)="activateLink($event)">
+        </header>
         <div #header class="header_after"></div>
+
     </div>
 
-    <content></content>
+    <!-- CONTENT -->
+    <content class="content"
+             [activeLink]="main.router['active-link']">
+    </content>
 
     <div class="footer">
+        
+        <!-- FOOTER -->
         <div #footer class="footer_before"></div>
-        <footer class="full-size"></footer>
+        <footer class="full-size"
+                [activeLink]="main.router['active-link']">
+        </footer>
+
     </div>
 
 </div>

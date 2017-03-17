@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'header',
@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
 })
 
 export class HeaderComponent {
+
+    @Output('activate') activate;
+
+    public activateLink(link: string): void {
+        this.activate.emmit(link);
+    }
 
 }
