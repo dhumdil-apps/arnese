@@ -1,22 +1,26 @@
 @import url("../../assets/css/variables");
 
 .header-wrapper {
-    margin: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    overflow-y: hidden;
+    overflow: hidden;
     color: @white;
+}
 
-    &__link {
-        flex: 1;
-        margin: auto 5px;
-        padding: 5px;
-        text-align: center;
-        cursor: pointer;
+.link {
+    margin: 0 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 100;
+    padding: 50px;
+    text-transform: uppercase;
 
-        &:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
+    &:hover {
+        text-decoration: underline;
     }
 }
 
@@ -24,6 +28,6 @@
     display: flex;
 }
 
-.layout-center {
-    margin: auto;
+.flex {
+    flex: 1;
 }
