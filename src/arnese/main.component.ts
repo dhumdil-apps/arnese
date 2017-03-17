@@ -39,12 +39,12 @@ export class MainComponent {
 
         // set width
         let w = this.container.nativeElement.offsetWidth + 'px solid transparent';
-        this.header.nativeElement.style.borderLeft = w;
-        this.footer.nativeElement.style.borderRight = w;
+        this.header.nativeElement.style.borderRight = w;
+        this.footer.nativeElement.style.borderLeft = w;
 
         // set height
         let h =  this.container.nativeElement.offsetParent.parentElement.clientHeight;
-        this.container.nativeElement.style.height = h + 100 + "px";
+        this.container.nativeElement.style.height = h + 50 + "px";
 
     }
 
