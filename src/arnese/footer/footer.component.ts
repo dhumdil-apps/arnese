@@ -8,12 +8,6 @@ import { Component, Input } from '@angular/core';
 
 export class FooterComponent {
 
-    public activeLink: string = '';
-
     @Input('activeLink') link: string;
-
-    ngAfterViewInit() {
-        this.activeLink = this.link;
-    }
 
 }

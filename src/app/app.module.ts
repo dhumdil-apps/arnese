@@ -15,7 +15,6 @@ import { ProductsComponent } from '../arnese/content/products/products.component
 import { HomeComponent } from '../arnese/content/home/home.component';
 
 import { PdfComponent } from '../arnese/content/products/pdf/pdf.component';
-import { ContactComponent } from '../arnese/content/home/contact/contact.component';
 
 // services
 import { ProductService } from '../arnese/content/products/products.service';
@@ -29,8 +28,7 @@ import { ProductService } from '../arnese/content/products/products.service';
         FooterComponent,
         ProductsComponent,
         HomeComponent,
-        PdfComponent,
-        ContactComponent
+        PdfComponent
     ],
     imports: [
         BrowserModule,

@@ -8,10 +8,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 export class HeaderComponent {
 
-    @Output('activate') activate;
+    @Output() activate = new EventEmitter();;
 
     public activateLink(link: string): void {
-        this.activate.emmit(link);
+        this.activate.emit(link);
     }
 
 }

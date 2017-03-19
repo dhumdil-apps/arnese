@@ -14,11 +14,13 @@ export class MainComponent {
     public main: any;
 
     constructor() {
+
         this.main = {
             'router': {
                 'active-link': 'home'
             }
-        }
+        };
+        
     }
 
     // bind elements

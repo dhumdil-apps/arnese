@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ProductService } from './products.service';
 import { Product } from './product.model';
@@ -11,18 +11,26 @@ import { Product } from './product.model';
 
 export class ProductsComponent implements OnInit {
 
-    public products: Product[];
-    public selectedPDF: string;
-    public loading: boolean = false;
+    @Output() selectedPDF = new EventEmitter();
 
-    constructor(private productService: ProductService) {}
+    public products: Product[];
+    public loading: boolean = true;
+
+    constructor(private productService: ProductService) { }
 
     ngOnInit(): void {
         this.getProducts();
     }
 
     private getProducts(): void {
-        this.productService.getProducts().then(products => this.products = products);
+
+        this.productService.getProducts().then(products => {
+            this.products = products;
+            setTimeout( ()=> {
+                this.loading = false;
+            }, 50000);
+        });
+
     }
 
 }
