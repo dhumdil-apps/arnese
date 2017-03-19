@@ -1,8 +1,12 @@
-<div class="content-wrapper layout-row">
+<div class="content-wrapper">
     
-    <home *ngIf="link === 'home'"></home>
+    <home class="home"
+          *ngIf="link === 'home'">
+    </home>
 
-    <products *ngIf="link === 'products'"></products>
+    <products class="products"
+              *ngIf="link === 'products'">
+    </products>
 
 </div>
 

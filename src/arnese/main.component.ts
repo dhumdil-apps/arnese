@@ -18,7 +18,8 @@ export class MainComponent {
         this.main = {
             'router': {
                 'active-link': 'home'
-            }
+            },
+            'scrolled': false
         };
         
     }
@@ -75,6 +76,9 @@ export class MainComponent {
 
         // trnsform container elements height to percentage
         let percentage = (browser > element) ? 100 : Math.floor((scrolled * 100) / (element - browser) );
+
+        this.main['scrolled'] = percentage === 100;
+
         // transform percentage to scrolled size
         let size = Math.floor(( (browser/2 - 100) * percentage) / 100);
 

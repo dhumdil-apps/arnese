@@ -1,33 +1,47 @@
 @import url("../../assets/css/variables");
 
 .header-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: 320px;
+    height: 100px;
     overflow: hidden;
-    color: @white;
-}
-
-.link {
-    margin: 0 10px;
-    text-align: left;
-    cursor: pointer;
-    font-size: 32px;
-    font-weight: 100;
-    padding: 50px;
-    text-transform: uppercase;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-.layout-row {
     display: flex;
 }
 
-.flex {
-    flex: 1;
+.link {
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+
+    &:hover {
+        .link__txt {
+            color: @light-blue;
+        }
+        &::after {
+            background-color: @light-blue;
+        }
+    }
+    &::after {
+        visibility: hidden;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: @white;
+    }
+    &__txt {
+        margin: auto;
+        font-size: 30px;
+        text-transform: uppercase;
+        color: @white;
+    }
+    &_active {
+        &::after {
+            visibility: visible;
+        }
+    }
 }

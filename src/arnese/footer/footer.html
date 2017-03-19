@@ -1,11 +1,64 @@
 <div class="footer-wrapper">
     
-    <div class="layout-row">
-        <div class="h1 layout-center">{{  link }}</div>
+    <!-- HOME -->
+    <div class="contact-info" *ngIf="link === 'home'">
+        
+        <div class="contact-info__block">
+            <div class="contact-info__block__item">
+                <img class="img" src="#" />
+                <div class="txt">Pavel Gazdík</div>
+            </div>
+            <div class="contact-info__block__item">
+                <img class="img" src="assets/svg/mail.svg" />
+                <div class="txt">arnese@arnese.sk</div>
+            </div>
+            <div class="contact-info__block__item">
+                <img class="img" src="assets/svg/phone.svg" />
+                <div class="txt">+421 915 823595</div>
+            </div>
+        </div>
+
+        <div class="contact-info__block">
+            <div class="contact-info__block__item">
+                <img class="img" src="assets/svg/location.svg" />
+                <div class="txt">Internátna 57</div>
+            </div>
+            <div class="contact-info__block__item">
+                <img class="img" src="#" />
+                <div class="txt">Banská Bystrica</div>
+            </div>
+            <div class="contact-info__block__item">
+                <img class="img" src="#" />
+                <div class="txt">974 04 Slovakia</div>
+            </div>
+        </div>
+
+
+        <div class="contact-info__block">
+            <div class="contact-info__block__item">
+                <img class="img" src="#" />
+                <div class="txt">Arnese s.r.o.</div>
+            </div>
+            <div class="contact-info__block__item">
+                <img class="img" src="#" />
+                <div class="txt">IČO: 44 672 926</div>
+            </div>
+            <div class="contact-info__block__item">
+                <img class="img" src="#" />
+                <div class="txt">DIČ: 2022778626</div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="layout-row">
-        <div class="layout-center">&copy; 2017</div>
+    <!-- PRODUCTS -->
+    <div class="products-categories" *ngIf="link === 'products'">
+
+        <div *ngFor="let category of categories; let i = index;"
+             class="h1 {{(i) % 3 === 0 ? 'clear' : ''}}">
+             <span>- {{ category.name }}</span>
+        </div>
+
     </div>
 
 </div>

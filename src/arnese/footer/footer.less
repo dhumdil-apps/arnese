@@ -1,23 +1,55 @@
 @import url("../../assets/css/variables");
 
 .footer-wrapper {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    margin: auto;
+    position: relative;
+    min-width: 320px;
+    height: 100%;
     overflow: hidden;
+    display: flex;
     color: @white;
 }
 
-.layout-row {
+.contact-info {
     display: flex;
+    margin: auto;
+
+    &__block {
+        position: relative;
+        overflow: hidden;
+        width: 320px;
+        margin: 10px auto;
+
+        &__item {
+            display: flex;
+            font-size: 14px;
+            height: 24px;
+
+            .img {
+                width: 24px;
+                height: 24px;
+            }
+            .txt {
+                font-family: 'Raleway SemiBold';
+                padding: 0 10px;
+                font-size: 18px;
+                margin: auto 0;
+            }
+        }
+    }
 }
 
-.layout-center {
-    margin: 10px auto;
-}
+.products-categories {
+    margin: auto;
 
-.h1 {
-    font-size: 24px;
-    padding: 20px;
+    .h1 {
+        width: 320px;
+        position: relative;
+        float: left;
+        font-family: 'Raleway SemiBold';
+        font-size: 18px;
+    }
+    .clear {
+        clear: both;
+    }
 }

@@ -1,12 +1,27 @@
 @import url("../../../assets/css/variables");
 
-.home {
-    margin: 20px;
+.home-wrapper {
     height: 100%;
-    overflow-y: hidden;
-    color: @dark;
+    overflow: hidden;
 }
 
-.contact {
+.block {
+    display: flex;
+    margin: 50px 100px;
 
+    &_item {
+        text-align: center;
+        color: @dark;
+    }
+    .h1 {
+        font-family: 'Raleway SemiBold';
+        margin: 10px 0;
+        font-size: 24px;
+    }
+    .txt {
+        font-size: 14px;
+    }
+    .flex {
+        flex: 1;
+    }
 }
