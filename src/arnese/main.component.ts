@@ -19,9 +19,11 @@ export class MainComponent {
             'router': {
                 'active-link': 'home'
             },
-            'scrolled': false
+            'page': {
+                'scrolled': false
+            }
         };
-        
+
     }
 
     // bind elements
