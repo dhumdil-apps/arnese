@@ -1,8 +1,227 @@
-@import url("../../assets/css/variables");
+@import url("../variables");
 
-.content-wrapper, .products, .home {
-    display: flex;
+.content_wrapper {
+    position: relative;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+
+    .h1 {
+        font-family: 'Raleway SemiBold';
+        margin: 10px 0;
+        font-size: 32px;
+        color: @black;
+    }
+    .txt {
+        font-family: 'Raleway';
+        padding: 10px 0;
+        font-size: 24px;
+        color: @black;
+    }
+    .flex {
+        flex: 1;
+    }
+    .space {
+        padding: 10px;
+    }
+    .clear {
+        clear: both;
+    }
+}
+
+.about {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+
+    > div {
+        margin: 50px auto;
+        max-width: 1024px;
+    }
+    .h1 {
+        font-size: 44px;
+        padding: 20px;
+    }
+    .txt {
+        padding: 10px 20px;
+    }
+}
+.contact {
+    background-color: @white;
+    display: flex;
+    position: relative;
+
+    &_wrapper {
+        background-color: @white;
+        display: flex;
+        max-width: 1024px;
+        margin: 50px auto 0 auto;
+
+        .h1 {
+            font-size: 24px;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+    &_txt {
+        margin: 0 auto 50px auto;
+        display: flex;
+        max-width: 1024px;
+
+        > div {
+            margin: 50px;
+        }
+        .h1 {
+            font-size: 20px;
+            margin: 0 auto;
+            padding: 5px;
+        }
+        .txt {
+            font-family: 'Raleway SemiBold';
+            padding: 5px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+        .a {
+            font-family: 'Raleway SemiBold';
+            padding: 5px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: @blue;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .about {
+        .h1 {
+            font-size: 24px;
+            padding: 20px;
+        }
+        .txt {
+            font-size: 17px;
+            padding: 10px 20px;
+        }
+    }
+    .contact {
+        display: flex;
+
+        &_wrapper {
+            display: block;
+            margin: 20px auto 0 auto;
+
+            .h1 {
+                font-size: 24px;
+                margin: 0 auto;
+                padding: 0px;
+            }
+        }
+        &_txt {
+            margin: 0 auto 20px auto;
+            display: block;
+
+            > div {
+                margin: 50px;
+            }
+            .h1 {
+                font-size: 20px;
+                margin: 0 auto;
+                padding: 5px;
+            }
+            .txt {
+                font-family: 'Raleway SemiBold';
+                padding: 5px;
+                margin: 0 auto;
+                font-size: 16px;
+            }
+            .a {
+                font-family: 'Raleway SemiBold';
+                padding: 5px;
+                margin: 0 auto;
+                font-size: 16px;
+                color: @blue;
+                text-decoration: none;
+            }
+        }
+    }
+
+}
+
+.pdfs {
+    display: flex;
+    position: relative;
+    background-color: @blue;
+    padding: 50px 0;
+
+    > div {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    .h1 {
+        font-size: 44px;
+        padding: 20px;
+        color: @white;
+    }
+    .btn {
+        padding: 15px 70px;
+        border-radius: 25px;
+        cursor: pointer;
+        color: @black;
+        text-transform: uppercase;
+        border: 1px solid @dark;
+        background-color: @white;
+
+        &:hover {
+            -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+        }
+    }
+}
+.list {
+    position: relative;
+    width: 100%;
+    margin: 50px 0;
+
+    &__category {
+        position: relative;
+        display: block;
+
+        &_title {
+            text-align: center;
+            color: @black;
+        }
+    }
+    &__item {
+        background: @white;
+        height: 100px;
+        max-width: 1024px;
+        display: flex;
+        margin: 10px;
+        cursor: pointer;
+        overflow: hidden;
+
+        &_brand {
+            flex: 1;
+            position: relative;
+            padding: 20px;
+            text-transform: uppercase;
+            font-size: 24px;
+            color: @black;
+            text-decoration: none;
+        }
+        &_image {
+            max-width: 50%;
+            color: @black;
+            text-decoration: none;
+        }
+        &:hover {
+            -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+        }
+    }
+}
+
+a {
+    text-decoration: none;
 }

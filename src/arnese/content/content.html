@@ -1,12 +1,64 @@
-<div class="content-wrapper">
-    
-    <home class="home"
-          *ngIf="link === 'home'">
-    </home>
+<div class="content_wrapper">
 
-    <products class="products"
-              *ngIf="link === 'products'">
-    </products>
+    <!-- Popis -->
+    <div class="about">
+        <div>
+            <div class="h1">Spoločnosť ARNESE s.r.o.</div>
+            <div class="txt">Vznikla v roku 2009. Hlavnou činnosťou spoločnosti je predaj nástrojov pre vŕtanie, frézovanie, sústruženie, závitovanie, upínacie náradie, ručné náradie, brusivo a meradlá.</div>
+            <div class="txt">Ponúkame komplexné riešenie výroby rezného náradia od návrhu koncepcie, cez výkresovú dokumentáciu, až po jeho výrobu a ostrenie vrátane povlaku.</div>
+            <div class="txt">Ponúkame kusovú a malosériovú výrobu dielcov podľa požiadaviek zákazníka, podľa dodanej výkresovej dokumentácie a taktiež na základe požiadaviek zákazníka.</div>
+        </div>
+    </div>
+
+    <!-- Sortiment -->
+    <div class="pdfs">
+        <div class="list">
+
+            <div class="list__category" *ngFor="let categories of list">
+
+                <div class="list__category_title h1">{{ categories[0].category.name }}</div>
+
+                <a href="{{ pdf(item.name) }}" target="_blank" class="list__item" *ngFor="let item of categories">
+                    <div class="list__item_brand">{{ item.brand.name }}</div>
+                    <img class="list__item_image" src="{{ img(item.name) }}" />
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Kontakt -->
+    <div class="contact">
+        <div class="contact_wrapper">
+            <div class="flex"></div>
+            <div>
+                <div class="h1">Pavel Gazdík - konateľ</div>
+            </div>
+            <div class="flex"></div>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="contact_txt">
+
+            <div class="flex"></div>
+
+            <div>
+                <div class="txt">+421 915 823 595</div>
+                <a href="mailto:arnese@arnese.sk" class="a">arnese@arnese.sk</a>
+            </div>
+            <div>
+                <div class="txt">Internátna 57</div>
+                <div class="txt">974 04 Banská Bystrica</div>
+            </div>
+            <div>
+                <div class="txt">IČO: 44 672 926</div>
+                <div class="txt">DIČ: 2022778626</div>
+            </div>
+
+            <div class="flex"></div>
+
+        </div>
+    </div>
 
 </div>
-

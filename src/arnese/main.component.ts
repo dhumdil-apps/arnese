@@ -7,94 +7,127 @@ import { Component, HostListener, ViewChild } from '@angular/core';
 })
 
 /**
- * Manage app dimensions & scroll
+ * Manage app dimensions, scroll & functionality
  */
 export class MainComponent {
 
-    public main: any;
-
-    constructor() {
-
-        this.main = {
-            'router': {
-                'active-link': 'home'
-            },
-            'page': {
-                'scrolled': false
-            }
-        };
-
-    }
+    public scrolled: boolean = false;
 
     // bind elements
     @ViewChild('container') container;
     @ViewChild('header') header;
+    @ViewChild('content') content;
+    @ViewChild('page') page;
     @ViewChild('footer') footer;
 
     // listen for scroll
-    @HostListener('window:scroll', ['$event']) onScroll(ev) {
+    @HostListener('window:scroll', ['$event']) onScroll() {
         this.scroll();
     }
 
     // listen for resize
-    @HostListener('window:resize', ['$event']) onResize(ev) {
+    @HostListener('window:resize', ['$event']) onResize() {
         this.resize();
         this.scroll();
     }
 
-    // init width/height
     ngAfterViewInit() {
         this.resize();
-        this.scroll();
+        this.scrollTop();
     }
 
-    /**
-     * Set dimensions
-     */
     private resize(): void {
-
-        // set header & footer shape
-        let w = this.container.nativeElement.offsetParent.offsetWidth + 'px solid transparent';
-        this.header.nativeElement.style.borderRight = w;
-        this.footer.nativeElement.style.borderLeft = w;
-
-        // set container's element height to 100% & 100px overflow
-        let h =  this.container.nativeElement.offsetParent.parentElement.clientHeight;
-        this.container.nativeElement.style.height = h + 50 + "px";
-
+        this.header.nativeElement.style.borderRight = this.container.nativeElement.offsetParent.offsetWidth + 'px solid transparent';
+        this.page.nativeElement.style.marginTop = this.container.nativeElement.offsetParent.offsetHeight + 'px';
+        this.footer.nativeElement.style.borderLeft = this.container.nativeElement.offsetParent.offsetWidth + 'px solid transparent';
     }
 
     /**
-     * Animate Scroll
+     * Scroll
      */
     private scroll(): void {
+        let size = this.container.nativeElement.offsetParent.scrollTop;
 
-        // container elements height
-        let element = this.container.nativeElement.clientHeight;
-        // browsers height
-        let browser = this.container.nativeElement.offsetParent.parentElement.clientHeight;
-        // scrolled size
-        let scrolled = this.container.nativeElement.offsetParent.scrollTop;
+        if (size >= 99) {
 
-        // trnsform container elements height to percentage
-        let percentage = (browser > element) ? 100 : Math.floor((scrolled * 100) / (element - browser) );
+            this.scrolled = true;
+            this.header.nativeElement.offsetParent.style.transform = "translateY(-100%)";
+            this.content.nativeElement.style.display = "none";
+            this.footer.nativeElement.offsetParent.style.transform = "translateY(100%)";
 
-        this.main['scrolled'] = percentage === 100;
+        } else {
 
-        // transform percentage to scrolled size
-        let size = Math.floor(( (browser/2 - 100) * percentage) / 100);
+            this.scrolled = false;
+            this.header.nativeElement.offsetParent.style.transform = "translateY(-" + size + "%)";
+            this.content.nativeElement.style.display = "flex";
+            this.content.nativeElement.style.opacity = "" + (1 - Number("0." + Math.floor(size < 30 ? 0 : size) ));
+            this.footer.nativeElement.offsetParent.style.transform = "translateY(" + size + "%)";
 
-        // position the header & footer based on scroll size
-        this.header.nativeElement.offsetParent.style.transform = "translateY(-" + size + "px)";
-        this.footer.nativeElement.offsetParent.style.transform = "translateY(" + size + "px)";
+        }
 
     }
+    public scrollTop(): void {
 
-    /**
-     * Simulate Router
-     */
-    public activateLink(link: string): void {
-        this.main.router['active-link'] = link;
+        let start = this.container.nativeElement.offsetParent.scrollTop + 1;
+        let end = 0;
+
+        let interval = setInterval(()=> {
+
+            start = Math.floor(start / 1.1);
+
+            if (start > end) {
+                this.container.nativeElement.offsetParent.scrollTop = start;
+                this.scroll();
+            } else {
+                this.container.nativeElement.offsetParent.scrollTop = end;
+                this.scroll();
+                clearInterval(interval);
+            }
+
+        }, 10);
+
+    }
+    public scrollPageStart(): void {
+
+        let start = this.container.nativeElement.offsetParent.scrollTop + 1;
+        let end = this.container.nativeElement.offsetParent.offsetHeight/2;
+        let step = end;
+
+        let interval = setInterval(()=> {
+
+            step = Math.floor(step / 1.001);
+            start += (end - step);
+
+            if (start < end) {
+                this.container.nativeElement.offsetParent.scrollTop = start;
+            } else {
+                this.container.nativeElement.offsetParent.scrollTop = end;
+                clearInterval(interval);
+            }
+
+        }, 10);
+
+    }
+    public scrollPageEnd(): void {
+
+        let start = this.container.nativeElement.offsetParent.scrollTop;
+        let end = this.container.nativeElement.offsetParent.scrollHeight - this.container.nativeElement.offsetParent.offsetHeight;
+        let step = end;
+
+        let interval = setInterval(()=> {
+
+            step = Math.floor(step / 1.001);
+            start += (end - step);
+
+            if (start < end) {
+                this.container.nativeElement.offsetParent.scrollTop = start;
+            } else {
+                this.container.nativeElement.offsetParent.scrollTop = end;
+                clearInterval(interval);
+            }
+
+        }, 10);
+
     }
 
 }
