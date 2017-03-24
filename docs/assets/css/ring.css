@@ -127,7 +127,6 @@
     }
 }
 .uil-ring-css {
-    margin: 0 auto;
     background: none;
     position: relative;
     width: 200px;
@@ -148,4 +147,3 @@
     -o-animation: uil-ring-anim 0.75s linear infinite;
     animation: uil-ring-anim 0.75s linear infinite;
 }
-
