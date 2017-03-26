@@ -2,21 +2,23 @@ import { Component } from '@angular/core';
 
 import { Pdf, PDFs } from './pdf/pdf.model';
 import { Category } from './pdf/category.model';
+import { SK } from './lang';
 
 @Component({
-    selector: 'content',
-    templateUrl: './content.html',
-    styleUrls: ['./content.less']
+    selector: 'app-content',
+    templateUrl: './app-content.html',
+    styleUrls: ['./app-content.less']
 })
 
 export class ContentComponent {
 
+    public sk = SK;
     public pdfs: Pdf[] = PDFs;
     public list: any = [];
 
     constructor() {
 
-        let i: number = 0;
+        let i = 0;
         let category: Category = this.pdfs[0].category;
         this.list[i] = [];
 

@@ -3,24 +3,21 @@
     <div class="header">
 
         <div class="header_wrapper">
-            <img class="img" src="assets/svg/logo.png" alt="Logo" />
+            <img class="img" src="{{ img('logo.png') }}" alt="Logo" />
         </div>
 
-        <!-- page scroll effect & shape -->
         <div #header class="header_after" (click)="scrollTop()">
-            <div>Arnese</div>
+            <div>{{ sk['logo-name'] }}</div>
         </div>
 
     </div>
 
     <div #page class="content">
 
-        <!-- page main content -->
-        <content></content>
+        <app-content></app-content>
 
-        <!-- page scroll effect -->
         <div #content class="content_scroll" (click)="scrollPageStart()">
-             <div>Scrolluj nižšie</div>
+            <div>{{ sk['about-section'] }}</div>
         </div>
 
     </div>
@@ -28,16 +25,15 @@
 
     <div class="footer" >
 
-        <!-- page scroll effect & shape -->
         <div #footer class="footer_before" (click)="scrollPageEnd()">
             <div>Kontakt</div>
         </div>
 
         <div class="footer_wrapper">
             <div class="footer_txt">
-                <div><div></div>obchodná činnosť</div>
-                <div><div></div>predaj nástrojov a náradia</div>
-                <div><div></div>strojárska výroba</div>
+                <div *ngFor="let txt of sk['logo-txt']">
+                    <div></div>{{ txt }}
+                </div>
             </div>
         </div>
 
