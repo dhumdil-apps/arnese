@@ -27,6 +27,7 @@
             width: 100%;
             height: auto;
             margin: auto 0;
+            max-height: 100%;
         }
     }
     &_after {
@@ -38,7 +39,7 @@
         height: 0;
         border-left: 0 solid transparent;
         border-right: 0 solid transparent; // js (on-resize)
-        border-top: 51px solid @white;
+        border-top: 51px solid @white; // js (on-scroll)
         cursor: pointer;
         transition: all 100ms ease-out;
 
@@ -102,7 +103,7 @@
         height: 0;
         border-left: 0 solid transparent; // js (on-resize)
         border-right: 0 solid transparent;
-        border-bottom: 51px solid @white;
+        border-bottom: 51px solid @white; // js (on-scroll)
         cursor: pointer;
         transition: all 100ms ease-out;
 
@@ -123,39 +124,23 @@
 
         > div {
             position: relative;
-            padding: 10px;
+            padding: 5px;
             display: flex;
 
             > div {
-                width: 10px;
+                width: 5px;
                 background: @red;
-                height: 10px;
-                margin: auto 20px auto 0;
+                height: 5px;
+                margin: auto 10px auto 0;
             }
         }
     }
-}
-
-.border-top_dark {
-    border-top: 51px solid @dark;
-}
-
-.border-bottom_dark {
-    border-bottom: 51px solid @dark;
 }
 
 @media screen and (max-width: 768px) {
     .footer {
         &_txt {
             font-size: 18px;
-            > div {
-                padding: 5px;
-                > div {
-                    width: 5px;
-                    height: 5px;
-                    margin: auto 10px auto 0;
-                }
-            }
         }
     }
 }

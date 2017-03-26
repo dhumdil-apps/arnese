@@ -12,7 +12,3 @@ arnese-app, main {
     height: 100%;
     display: flex;
 }
-
-.loader {
-    margin: auto;
-}

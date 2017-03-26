@@ -11,21 +11,16 @@ import { Component, HostListener, ViewChild } from '@angular/core';
  */
 export class MainComponent {
 
-    public scrolled: boolean = false;
-
-    // bind elements
     @ViewChild('container') container;
     @ViewChild('header') header;
     @ViewChild('content') content;
     @ViewChild('page') page;
     @ViewChild('footer') footer;
 
-    // listen for scroll
     @HostListener('window:scroll', ['$event']) onScroll() {
         this.scroll();
     }
 
-    // listen for resize
     @HostListener('window:resize', ['$event']) onResize() {
         this.resize();
         this.scroll();
@@ -50,18 +45,24 @@ export class MainComponent {
 
         if (size >= 99) {
 
-            this.scrolled = true;
             this.header.nativeElement.offsetParent.style.transform = "translateY(-100%)";
+            this.header.nativeElement.style.borderTop = "51px solid #333333";
+
             this.content.nativeElement.style.display = "none";
+
             this.footer.nativeElement.offsetParent.style.transform = "translateY(100%)";
+            this.footer.nativeElement.style.borderBottom = "51px solid #333333";
 
         } else {
 
-            this.scrolled = false;
             this.header.nativeElement.offsetParent.style.transform = "translateY(-" + size + "%)";
+            this.header.nativeElement.style.borderTop = "51px solid #fff";
+
             this.content.nativeElement.style.display = "flex";
-            this.content.nativeElement.style.opacity = "" + (1 - Number("0." + Math.floor(size < 30 ? 0 : size) ));
+            this.content.nativeElement.style.opacity = "0." + (1 - Number("0." + Math.floor(size < 30 ? 0 : size) ));
+
             this.footer.nativeElement.offsetParent.style.transform = "translateY(" + size + "%)";
+            this.footer.nativeElement.style.borderBottom = "51px solid #fff";
 
         }
 

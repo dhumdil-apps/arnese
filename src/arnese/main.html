@@ -3,11 +3,11 @@
     <div class="header">
 
         <div class="header_wrapper">
-            <img class="img" src="arnese/assets/svg/logo.png" alt="Logo" />
+            <img class="img" src="assets/svg/logo.png" alt="Logo" />
         </div>
 
         <!-- page scroll effect & shape -->
-        <div #header class="header_after" [ngClass]="{'border-top_dark': scrolled}" (click)="scrollTop()">
+        <div #header class="header_after" (click)="scrollTop()">
             <div>Arnese</div>
         </div>
 
@@ -29,7 +29,7 @@
     <div class="footer" >
 
         <!-- page scroll effect & shape -->
-        <div #footer class="footer_before" [ngClass]="{'border-bottom_dark': scrolled}" (click)="scrollPageEnd()">
+        <div #footer class="footer_before" (click)="scrollPageEnd()">
             <div>Kontakt</div>
         </div>
 
