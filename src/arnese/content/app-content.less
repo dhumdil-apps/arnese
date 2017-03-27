@@ -3,6 +3,7 @@
 .content_wrapper {
     position: relative;
     width: 100%;
+    overflow: hidden;
 
     .h1 {
         font-family: 'Raleway SemiBold';
@@ -32,10 +33,11 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     display: flex;
 
     > div {
-        margin: 50px auto;
+        margin: auto;
         max-width: 1024px;
     }
     .h1 {
@@ -91,15 +93,128 @@
         }
     }
 }
+
+.pdfs {
+    display: flex;
+    position: relative;
+    background-color: @blue;
+    padding: 50px 0;
+
+    > div {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    .btn {
+        padding: 15px 70px;
+        border-radius: 25px;
+        cursor: pointer;
+        color: @black;
+        text-transform: uppercase;
+        border: 1px solid @dark;
+        background-color: @white;
+        transition: all 100ms ease;
+
+        &:hover {
+            -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+        }
+    }
+    .txt {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .h1 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+.list {
+    position: relative;
+    width: 100%;
+    margin: 50px 0;
+
+    &__category {
+        position: relative;
+        display: block;
+
+        &_title {
+            padding: 50px 0;
+            text-align: center;
+            color: @white;
+        }
+        .h1 {
+            font-family: 'Raleway SemiBold';
+            margin: 10px 0;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: @white;
+        }
+    }
+    &__item {
+        background: @white;
+        height: 100px;
+        max-width: 1024px;
+        display: flex;
+        margin: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 100ms ease;
+
+        .h1 {
+            font-family: 'Raleway SemiBold';
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: @black;
+        }
+        .txt {
+            font-family: 'Raleway';
+            padding: 10px 0 0 0;
+            font-size: 14px;
+            color: @black;
+        }
+        &_brand {
+            width: 50%;
+            margin: 20px;
+            position: relative;
+            font-size: 24px;
+            color: @black;
+            text-decoration: none;
+        }
+        &_image {
+            width: 50%;
+            color: @black;
+            text-decoration: none;
+            display: flex;
+
+            .img {
+                margin: auto;
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+            }
+        }
+        &:hover {
+            -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .about {
         .h1 {
-            font-size: 24px;
-            padding: 20px;
+            font-size: 18px;
+            padding: 10px;
         }
         .txt {
-            font-size: 17px;
-            padding: 10px 20px;
+            font-size: 14px;
+            padding: 10px;
         }
     }
     .contact {
@@ -143,88 +258,10 @@
             }
         }
     }
-
-}
-
-.pdfs {
-    display: flex;
-    position: relative;
-    background-color: @blue;
-    padding: 50px 0;
-
-    > div {
-        max-width: 1024px;
-        margin: 0 auto;
+    .list__item_image {
+        display: none;
     }
-    .h1 {
-        font-family: 'Raleway SemiBold';
-        margin: 10px 0;
-        font-size: 32px;
-        color: @black;
-        text-transform: uppercase;
-    }
-    .txt {
-        font-family: 'Raleway';
-        padding: 10px 0;
-        font-size: 24px;
-        color: @black;
-    }
-    .btn {
-        padding: 15px 70px;
-        border-radius: 25px;
-        cursor: pointer;
-        color: @black;
-        text-transform: uppercase;
-        border: 1px solid @dark;
-        background-color: @white;
-
-        &:hover {
-            -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-            -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-            box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-        }
-    }
-}
-.list {
-    position: relative;
-    width: 100%;
-    margin: 50px 0;
-
-    &__category {
-        position: relative;
-        display: block;
-
-        &_title {
-            text-align: center;
-            color: @black;
-        }
-    }
-    &__item {
-        background: @white;
-        height: 100px;
-        max-width: 1024px;
-        display: flex;
-        margin: 10px;
-        cursor: pointer;
-        overflow: hidden;
-
-        &_brand {
-            flex: 1;
-            position: relative;
-            padding: 20px;
-            font-size: 24px;
-            color: @black;
-            text-decoration: none;
-        }
-        &_image {
-            max-width: 50%;
-            color: @black;
-            text-decoration: none;
-        }
-        &:hover {
-            -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-            -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-            box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-        }
+    .list__item_brand {
+        width: 100%;
     }
 }

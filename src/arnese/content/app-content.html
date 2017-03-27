@@ -3,7 +3,7 @@
     <div class="about">
         <div>
             <div class="h1">{{ sk['about-section'] }}</div>
-            <div class="txt" *ngFor="let txt of sk['about-section-txt']"></div>
+            <div class="txt" *ngFor="let txt of sk['about-section-txt']">{{ txt }}</div>
         </div>
     </div>
 
@@ -19,7 +19,9 @@
                         <div class="h1">{{ item.brand.name }}</div>
                         <div class="txt">{{ item.brand.desc }}</div>
                     </div>
-                    <img class="list__item_image" src="{{ img(item.name) }}" />
+                    <div class="list__item_image">
+                        <img class="img" src="{{ img(item.name) }}" />
+                    </div>
                 </a>
 
             </div>

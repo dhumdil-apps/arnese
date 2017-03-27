@@ -36,12 +36,12 @@ export class ContentComponent {
 
     }
 
-    public img(name: string): string {
-        return 'assets/img/img.png';
+    public img(filename: string): string {
+        return 'arnese/assets/img/img.png';
     }
 
-    public pdf(name: string): string {
-        return 'assets/pdf/' + name + '.pdf';
+    public pdf(filename: string): string {
+        return 'arnese/assets/pdf/' + filename + '.pdf';
     }
 
 }
