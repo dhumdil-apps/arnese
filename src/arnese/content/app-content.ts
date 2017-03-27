@@ -37,7 +37,7 @@ export class ContentComponent {
     }
 
     public img(filename: string): string {
-        return 'arnese/assets/img/img.png';
+        return 'arnese/assets/img/' + filename;
     }
 
     public pdf(filename: string): string {

@@ -17,10 +17,13 @@
                 <a href="{{ pdf(item.name) }}" target="_blank" class="list__item" *ngFor="let item of categories">
                     <div class="list__item_brand">
                         <div class="h1">{{ item.brand.name }}</div>
-                        <div class="txt">{{ item.brand.desc }}</div>
+                        <div>
+                            <img class="img" src="{{ img('Adobe_PDF.svg') }}" alt="PDF" />
+                            <div class="txt">{{ item.brand.desc }}</div>
+                        </div>
                     </div>
                     <div class="list__item_image">
-                        <img class="img" src="{{ img(item.name) }}" />
+                        <img class="img" src="{{ img('img.png') }}" />
                     </div>
                 </a>
 
@@ -29,7 +32,7 @@
         </div>
     </div>
 
-    <div class="contact">
+    <div class="contact p-top_50">
         <div class="contact_wrapper">
             <div class="flex"></div>
             <div>
@@ -38,7 +41,7 @@
             <div class="flex"></div>
         </div>
     </div>
-    <div class="contact">
+    <div class="contact p-bottom_50">
         <div class="contact_txt">
             <div class="flex"></div>
 

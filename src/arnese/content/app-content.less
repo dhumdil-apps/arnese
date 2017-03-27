@@ -26,6 +26,12 @@
     .clear {
         clear: both;
     }
+    .p-top_50 {
+        padding-top: 50px;
+    }
+    .p-bottom_50 {
+        padding-bottom: 50px;
+    }
 }
 
 .about {
@@ -145,7 +151,7 @@
     }
     &__item {
         background: @white;
-        height: 100px;
+        height: 80px;
         max-width: 1024px;
         display: flex;
         margin: 10px;
@@ -155,8 +161,8 @@
 
         .h1 {
             font-family: 'Raleway SemiBold';
-            margin: 0;
-            font-size: 24px;
+            margin: 0 0 0 50px;
+            font-size: 18px;
             text-transform: uppercase;
             color: @black;
             white-space: nowrap;
@@ -174,8 +180,17 @@
         }
         &_brand {
             width: 50%;
-            margin: 20px;
+            margin: 10px;
             position: relative;
+
+            > div {
+                display: flex;
+            }
+            .img {
+                margin-right: 20px;
+                width: 30px;
+                height: 30px;
+            }
         }
         &_image {
             width: 50%;
@@ -264,10 +279,10 @@
             margin: 10px auto;
 
             .h1 {
-                font-size: 18px;
+                font-size: 14px;
             }
             .txt {
-                font-size: 13px;
+                font-size: 12px;
             }
             &_brand {
                 width: 100%;
