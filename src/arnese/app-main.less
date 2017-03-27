@@ -59,7 +59,8 @@
     left: 0;
     width: 100%;
     margin-top: 0px; // js (on-resize)
-
+    margin-bottom: 0px; // js (on-resize)
+    
     &_scroll {
         position: fixed;
         left: 0;
@@ -85,6 +86,7 @@
     width: 100%;
     height: ~"calc(50% - 100px)";
     background: @dark;
+    z-index: 100;
 
     &_wrapper {
         position: relative;

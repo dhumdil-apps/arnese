@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Pdf, PDFs } from './pdf/pdf.model';
 import { Category } from './pdf/category.model';
@@ -15,6 +15,8 @@ export class ContentComponent {
     public sk = SK;
     public pdfs: Pdf[] = PDFs;
     public list: any = [];
+
+    @Input() aboutSection: boolean;
 
     constructor() {
 

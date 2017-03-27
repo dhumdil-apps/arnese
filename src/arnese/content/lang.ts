@@ -9,6 +9,6 @@ export const SK = {
     'contact-section-txts': [
         ['+421 915 823 595', 'arnese@arnese.sk'],
         ['Internátna 57', '974 04 Banská Bystrica'],
-        ['IČO: 44 672 926', 'DIČ: 2022778626']
+        ['IČO: 44 672 926', 'DIČ: 2022778626', 'IČ DPH: SK2022778626']
     ]
 };

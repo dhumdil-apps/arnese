@@ -14,7 +14,7 @@
 
     <div #page class="content">
 
-        <app-content></app-content>
+        <app-content [aboutSection]="aboutSection"></app-content>
 
         <div #content class="content_scroll" (click)="scrollPageStart()">
             <div>{{ sk['about-section'] }}</div>

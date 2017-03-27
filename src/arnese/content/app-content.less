@@ -34,13 +34,14 @@
     }
 }
 
-.about {
+.about-section {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: flex;
+    background: @white;
 
     > div {
         margin: auto;
@@ -54,57 +55,68 @@
         padding: 10px 20px;
     }
 }
-.contact {
-    background-color: @white;
-    display: flex;
-    position: relative;
 
-    &_wrapper {
+.contact-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: @white;
+
+    > div {
+        margin: auto;
+    }
+    .contact {
         background-color: @white;
         display: flex;
-        max-width: 1024px;
-        margin: 50px auto 0 auto;
+        position: relative;
 
-        .h1 {
-            font-size: 24px;
-            margin: 0 auto;
-            padding: 0;
-        }
-    }
-    &_txt {
-        margin: 0 auto 50px auto;
-        display: flex;
-        max-width: 1024px;
+        &_wrapper {
+            background-color: @white;
+            display: flex;
+            max-width: 1024px;
+            margin: 50px auto 0 auto;
 
-        > div {
-            margin: 50px;
+            .h1 {
+                font-size: 24px;
+                margin: 0 auto;
+                padding: 0;
+            }
         }
-        .h1 {
-            font-size: 20px;
-            margin: 0 auto;
-            padding: 5px;
-        }
-        .txt {
-            font-family: 'Raleway SemiBold';
-            padding: 5px;
-            margin: 0 auto;
-            font-size: 16px;
-        }
-        .a {
-            font-family: 'Raleway SemiBold';
-            padding: 5px;
-            margin: 0 auto;
-            font-size: 16px;
-            color: @blue;
+        &_txt {
+            margin: 0 auto 50px auto;
+            display: flex;
+            max-width: 1024px;
+
+            .h1 {
+                font-size: 20px;
+                margin: 0 auto;
+                padding: 5px;
+            }
+            .txt {
+                font-family: 'Raleway SemiBold';
+                padding: 5px;
+                margin: 0 auto;
+                font-size: 16px;
+            }
+            .a {
+                font-family: 'Raleway SemiBold';
+                padding: 5px;
+                margin: 0 auto;
+                font-size: 16px;
+                color: @blue;
+            }
         }
     }
 }
-
 .pdfs {
     display: flex;
     position: relative;
     background-color: @blue;
     padding: 50px 0;
+    z-index: 50;
 
     > div {
         max-width: 1024px;
@@ -225,10 +237,8 @@
             padding: 10px;
         }
     }
-    .contact {
-        display: flex;
-
-        &_wrapper {
+    .contact-section {
+        .contact_wrapper {
             display: block;
             margin: 20px auto 0 auto;
 
@@ -238,7 +248,7 @@
                 padding: 0px;
             }
         }
-        &_txt {
+        .contact_txt {
             margin: 0 auto 20px auto;
             display: block;
 

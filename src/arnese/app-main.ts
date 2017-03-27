@@ -11,6 +11,7 @@ export class MainComponent implements AfterViewInit {
 
     public sk: any = SK;
     public browser: any = {};
+    public aboutSection: boolean = true;
 
     @ViewChild('container') container;
     @ViewChild('header') header;
@@ -29,10 +30,17 @@ export class MainComponent implements AfterViewInit {
 
     constructor() {
 
-        // default use webkit
         this.browser = {
-            'webkit': false,
-            'moz': false
+            'type': {
+                'webkit': false,
+                'moz': false
+            },
+            'style': {
+                'content-margin': 0,
+                'scroll-top': 0,
+                'width': 0,
+                'height': 0
+            }
         };
 
         this.detectBrowser();
@@ -40,22 +48,30 @@ export class MainComponent implements AfterViewInit {
 
     ngAfterViewInit() {
         this.resize();
+        this.scroll();
         this.scrollTop();
     }
 
     private resize(): void {
-        this.header.nativeElement.style.borderRight = this.container.nativeElement.offsetParent.offsetWidth + 'px solid transparent';
-        this.page.nativeElement.style.marginTop = this.browser['web-kit'] ? (100 + this.container.nativeElement.offsetParent.offsetHeight + 'px') : (100 + this.container.nativeElement.offsetParent.parentElement.offsetHeight + 'px');
-        this.footer.nativeElement.style.borderLeft = this.container.nativeElement.offsetParent.offsetWidth + 'px solid transparent';
+
+        this.browser.style['width'] = this.container.nativeElement.offsetParent.offsetWidth;
+        this.browser.style['height'] = this.browser.type['web-kit'] ? (this.container.nativeElement.offsetParent.offsetHeight) : (this.container.nativeElement.offsetParent.parentElement.offsetHeight);
+        
+        this.header.nativeElement.style.borderRight = this.browser.style['width'] + 'px solid transparent';
+        this.page.nativeElement.style.marginTop = this.browser.style['height'] + 'px';
+        this.page.nativeElement.style.marginBottom = this.browser.style['height'] + 'px';
+        this.footer.nativeElement.style.borderLeft = this.browser.style['width'] + 'px solid transparent';
+   
     }
 
-    /**
-     * Scroll
-     */
     private scroll(): void {
-        const size = this.browser['web-kit'] ? this.container.nativeElement.offsetParent.scrollTop : this.container.nativeElement.offsetParent.parentElement.scrollTop;
 
-        if (size >= 99) {
+        this.browser.style['scroll-top'] = this.browser.type['web-kit'] ? this.container.nativeElement.offsetParent.scrollTop : this.container.nativeElement.offsetParent.parentElement.scrollTop;
+        try {
+            this.aboutSection = (this.browser.style['scroll-top'] < this.browser.style['height']);
+        } catch (err) {}
+
+        if (this.browser.style['scroll-top'] >= 99) {
 
             this.header.nativeElement.offsetParent.style.transform = 'translateY(-100%)';
             this.header.nativeElement.style.borderTop = '51px solid #333';
@@ -67,13 +83,13 @@ export class MainComponent implements AfterViewInit {
 
         } else {
 
-            this.header.nativeElement.offsetParent.style.transform = 'translateY(-' + size + '%)';
+            this.header.nativeElement.offsetParent.style.transform = 'translateY(-' + this.browser.style['scroll-top'] + '%)';
             this.header.nativeElement.style.borderTop = '51px solid #fff';
 
             this.content.nativeElement.style.display = 'flex';
-            this.content.nativeElement.style.opacity = '' + (1 - Number('0.' + Math.floor(size < 30 ? 0 : size) ));
+            this.content.nativeElement.style.opacity = '' + (1 - Number('0.' + Math.floor(this.browser.style['scroll-top'] < 30 ? 0 : this.browser.style['scroll-top']) ));
 
-            this.footer.nativeElement.offsetParent.style.transform = 'translateY(' + size + '%)';
+            this.footer.nativeElement.offsetParent.style.transform = 'translateY(' + this.browser.style['scroll-top'] + '%)';
             this.footer.nativeElement.style.borderBottom = '51px solid #fff';
 
         }
@@ -81,12 +97,8 @@ export class MainComponent implements AfterViewInit {
     }
     public scrollTop(): void {
 
-        let start = 1;
-        if (this.browser['web-kit']) {
-            start += this.container.nativeElement.offsetParent.scrollTop;
-        } else {
-            start += this.container.nativeElement.offsetParent.parentElement.scrollTop;
-        }
+        // this.scroll();
+        let start = this.browser.style['scroll-top'] + 1;
         const end = 0;
 
         const interval = setInterval(() => {
@@ -94,20 +106,26 @@ export class MainComponent implements AfterViewInit {
             start = Math.floor(start / 1.1);
 
             if (start > end) {
-                if (this.browser['web-kit']) {
+                
+                if (this.browser.type['web-kit']) {
                     this.container.nativeElement.offsetParent.scrollTop = start;
                 } else {
                     this.container.nativeElement.offsetParent.parentElement.scrollTop = start;
                 }
-                this.scroll();
+
+                // this.scroll();
+
             } else {
-                if (this.browser['web-kit']) {
+                
+                if (this.browser.type['web-kit']) {
                     this.container.nativeElement.offsetParent.scrollTop = end;
                 } else {
                     this.container.nativeElement.offsetParent.parentElement.scrollTop = end;
                 }
-                this.scroll();
+
+                // this.scroll();
                 clearInterval(interval);
+
             }
 
         }, 10);
@@ -115,19 +133,9 @@ export class MainComponent implements AfterViewInit {
     }
     public scrollPageStart(): void {
 
-        let start = 1;
-        if (this.browser['web-kit']) {
-            start += this.container.nativeElement.offsetParent.scrollTop;
-        } else {
-            start += this.container.nativeElement.offsetParent.parentElement.scrollTop;
-        }
-
+        // this.scroll();
+        let start = this.browser.style['scroll-top'] + 1;
         const end = 100;
-        // if (this.browser['web-kit']) {
-        //     end += this.container.nativeElement.offsetParent.offsetHeight;
-        // } else {
-        //     end += this.container.nativeElement.offsetParent.parentElement.offsetHeight;
-        // }
         let step = end;
 
         const interval = setInterval(() => {
@@ -136,18 +144,23 @@ export class MainComponent implements AfterViewInit {
             start += (end - step);
 
             if (start < end) {
-                if (this.browser['web-kit']) {
+
+                if (this.browser.type['web-kit']) {
                     this.container.nativeElement.offsetParent.scrollTop = start;
                 } else {
                     this.container.nativeElement.offsetParent.parentElement.scrollTop = start;
                 }
+
             } else {
-                if (this.browser['web-kit']) {
+
+                if (this.browser.type['web-kit']) {
                     this.container.nativeElement.offsetParent.scrollTop = end;
                 } else {
                     this.container.nativeElement.offsetParent.parentElement.scrollTop = end;
                 }
+
                 clearInterval(interval);
+
             }
 
         }, 10);
@@ -155,21 +168,15 @@ export class MainComponent implements AfterViewInit {
     }
     public scrollPageEnd(): void {
 
-        let start = 0;
-        if (this.browser['web-kit']) {
-            start += this.container.nativeElement.offsetParent.scrollTop;
-        } else {
-            start += this.container.nativeElement.offsetParent.parentElement.scrollTop;
-        }
-
+        let start = this.browser.style['scroll-top'];
         let end = 0;
-        if (this.browser['web-kit']) {
+        let step = end;
+
+        if (this.browser.type['web-kit']) {
             end += this.container.nativeElement.offsetParent.scrollHeight - this.container.nativeElement.offsetParent.offsetHeight;
         } else {
             end += this.container.nativeElement.offsetParent.parentElement.scrollHeight - this.container.nativeElement.offsetParent.parentElement.offsetHeight;
         }
-
-        let step = end;
 
         const interval = setInterval(() => {
 
@@ -177,18 +184,23 @@ export class MainComponent implements AfterViewInit {
             start += (end - step);
 
             if (start < end) {
-                if (this.browser['web-kit']) {
+
+                if (this.browser.type['web-kit']) {
                     this.container.nativeElement.offsetParent.scrollTop = start;
                 } else {
                     this.container.nativeElement.offsetParent.parentElement.scrollTop = start;
                 }
+
             } else {
-                if (this.browser['web-kit']) {
+
+                if (this.browser.type['web-kit']) {
                     this.container.nativeElement.offsetParent.scrollTop = end;
                 } else {
                     this.container.nativeElement.offsetParent.parentElement.scrollTop = end;
                 }
+
                 clearInterval(interval);
+
             }
 
         }, 10);
@@ -207,13 +219,13 @@ export class MainComponent implements AfterViewInit {
         // console.log(navigator.userAgent);
 
         if (navigator.userAgent.indexOf('AppleWebKit') !== -1) {
-            this.browser['web-kit'] = true;
+            this.browser.type['web-kit'] = true;
 
         } else if (navigator.userAgent.indexOf('Mozilla') !== -1) {
-            this.browser['moz'] = true;
+            this.browser.type['moz'] = true;
 
         } else {
-            this.browser['web-kit'] = true;
+            this.browser.type['web-kit'] = true;
 
         }
 
