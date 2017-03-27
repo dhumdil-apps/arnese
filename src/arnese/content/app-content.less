@@ -120,16 +120,6 @@
             box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
         }
     }
-    .txt {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .h1 {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
 }
 .list {
     position: relative;
@@ -141,7 +131,7 @@
         display: block;
 
         &_title {
-            padding: 50px 0;
+            padding: 50px 20px;
             text-align: center;
             color: @white;
         }
@@ -169,20 +159,23 @@
             font-size: 24px;
             text-transform: uppercase;
             color: @black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .txt {
             font-family: 'Raleway';
             padding: 10px 0 0 0;
             font-size: 14px;
             color: @black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &_brand {
             width: 50%;
             margin: 20px;
             position: relative;
-            font-size: 24px;
-            color: @black;
-            text-decoration: none;
         }
         &_image {
             width: 50%;
@@ -235,7 +228,7 @@
             display: block;
 
             > div {
-                margin: 50px;
+                margin: 10px;
             }
             .h1 {
                 font-size: 20px;
@@ -258,10 +251,30 @@
             }
         }
     }
-    .list__item_image {
-        display: none;
-    }
-    .list__item_brand {
-        width: 100%;
+    .list {
+        margin: 20px 0;
+
+        &__category {
+            .h1 {
+                font-size: 18px;
+            }
+        }
+        &__item {
+            max-width: 320px;
+            margin: 10px auto;
+
+            .h1 {
+                font-size: 18px;
+            }
+            .txt {
+                font-size: 13px;
+            }
+            &_brand {
+                width: 100%;
+            }
+            &_image {
+                display: none;
+            }
+        }
     }
 }
