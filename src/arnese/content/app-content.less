@@ -1,4 +1,3 @@
-@import url("../variables");
 
 .content_wrapper {
     position: relative;
@@ -9,13 +8,13 @@
         font-family: 'Raleway SemiBold';
         margin: 10px 0;
         font-size: 32px;
-        color: @black;
+        color: #000;
     }
     .txt {
         font-family: 'Raleway';
         padding: 10px 0;
         font-size: 24px;
-        color: @black;
+        color: #000;
     }
     .flex {
         flex: 1;
@@ -41,7 +40,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-    background: @white;
+    background: #eee;
 
     > div {
         margin: auto;
@@ -55,7 +54,6 @@
         padding: 10px 20px;
     }
 }
-
 .contact-section {
     position: fixed;
     top: 0;
@@ -63,18 +61,18 @@
     width: 100%;
     height: 100%;
     display: flex;
-    background: @white;
+    background: #eee;
 
     > div {
         margin: auto;
     }
     .contact {
-        background-color: @white;
+        background-color: #eee;
         display: flex;
         position: relative;
 
         &_wrapper {
-            background-color: @white;
+            background-color: #eee;
             display: flex;
             max-width: 1024px;
             margin: 50px auto 0 auto;
@@ -106,133 +104,121 @@
                 padding: 5px;
                 margin: 0 auto;
                 font-size: 16px;
-                color: @blue;
+                color: #000;
             }
         }
     }
 }
-.pdfs {
-    display: flex;
-    position: relative;
-    background-color: @blue;
-    padding: 50px 0;
-    z-index: 50;
-
-    > div {
-        max-width: 1024px;
-        margin: 0 auto;
-    }
-    .btn {
-        padding: 15px 70px;
-        border-radius: 25px;
-        cursor: pointer;
-        color: @black;
-        text-transform: uppercase;
-        border: 1px solid @dark;
-        background-color: @white;
-        transition: all 100ms ease;
-
-        &:hover {
-            -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-            -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-            box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-        }
-    }
-}
-.list {
-    position: relative;
-    width: 100%;
-    margin: 50px 0;
-
-    &__category {
-        position: relative;
-        display: block;
-
-        &_title {
-            padding: 50px 20px;
-            text-align: center;
-            color: @white;
-        }
-        .h1 {
-            font-family: 'Raleway SemiBold';
-            margin: 10px 0;
-            font-size: 24px;
-            text-transform: uppercase;
-            color: @white;
-        }
-    }
-    &__item {
-        background: @white;
-        height: 80px;
-        max-width: 1024px;
+.products-section {
+    .pdfs {
         display: flex;
-        margin: 10px;
-        cursor: pointer;
-        overflow: hidden;
-        transition: all 100ms ease;
+        position: relative;
+        background-color: #333;
+        padding: 50px 0;
+        z-index: 50;
 
-        .h1 {
-            font-family: 'Raleway SemiBold';
-            margin: 0 0 0 50px;
-            font-size: 18px;
-            text-transform: uppercase;
-            color: @black;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        > div {
+            max-width: 1024px;
+            margin: 0 auto;
         }
-        .txt {
-            font-family: 'Raleway';
-            padding: 10px 0 0 0;
-            font-size: 14px;
-            color: @black;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        &_brand {
-            width: 50%;
-            margin: 10px;
+    }
+    .list {
+        position: relative;
+        width: 100%;
+        margin: 50px 0;
+
+        &__category {
             position: relative;
+            display: block;
 
-            > div {
-                display: flex;
+            &_title {
+                padding: 50px 20px;
+                text-align: center;
+                color: #fff;
             }
-            .img {
-                margin-right: 20px;
-                width: 30px;
-                height: 30px;
+            .h1 {
+                font-family: 'Raleway SemiBold';
+                margin: 10px 0;
+                font-size: 24px;
+                text-transform: uppercase;
+                color: #fff;
             }
         }
-        &_image {
-            width: 50%;
-            color: @black;
-            text-decoration: none;
+        &__item {
+            background: #eee;
+            height: 200px;
+            width: 200px;
             display: flex;
+            margin: 50px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 100ms ease;
 
-            .img {
-                margin: auto;
-                max-width: 100%;
-                max-height: 100%;
-                width: auto;
-                height: auto;
+            .h1 {
+                font-family: 'Raleway SemiBold';
+                margin: 0 0 0 50px;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: #000;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
-        }
-        &:hover {
-            -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-            -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
-            box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
+            .txt {
+                font-family: 'Raleway';
+                padding: 10px 0 0 0;
+                font-size: 14px;
+                color: #000;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &_brand {
+                width: 50%;
+                margin: 10px;
+                position: relative;
+
+                > div {
+                    display: flex;
+                }
+                .img {
+                    margin-right: 20px;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            &_image {
+                width: 50%;
+                color: #000;
+                text-decoration: none;
+                display: flex;
+
+                .img {
+                    margin: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: auto;
+                    height: auto;
+                }
+            }
+            &:hover {
+                -webkit-box-shadow: 10px 10px 40px -10px #000;
+                -moz-box-shadow: 10px 10px 40px -10px #000;
+                box-shadow: 10px 10px 40px -10px #000;
+            }
         }
     }
 }
 
 @media screen and (max-width: 768px) {
-    .about {
+    .about-section {
         .h1 {
+            text-align: center;
             font-size: 18px;
             padding: 10px;
         }
         .txt {
+            text-align: center;
             font-size: 14px;
             padding: 10px;
         }
@@ -245,7 +231,7 @@
             .h1 {
                 font-size: 24px;
                 margin: 0 auto;
-                padding: 0px;
+                padding: 0;
             }
         }
         .contact_txt {
@@ -271,34 +257,36 @@
                 padding: 5px;
                 margin: 0 auto;
                 font-size: 16px;
-                color: @blue;
+                color: #eee;
                 text-decoration: none;
             }
         }
     }
-    .list {
-        margin: 20px 0;
+    .products-section {
+        .list {
+            margin: 20px 0;
 
-        &__category {
-            .h1 {
-                font-size: 18px;
+            &__category {
+                .h1 {
+                    font-size: 18px;
+                }
             }
-        }
-        &__item {
-            max-width: 320px;
-            margin: 10px auto;
+            &__item {
+                max-width: 320px;
+                margin: 10px auto;
 
-            .h1 {
-                font-size: 14px;
-            }
-            .txt {
-                font-size: 12px;
-            }
-            &_brand {
-                width: 100%;
-            }
-            &_image {
-                display: none;
+                .h1 {
+                    font-size: 14px;
+                }
+                .txt {
+                    font-size: 12px;
+                }
+                &_brand {
+                    width: 100%;
+                }
+                &_image {
+                    display: none;
+                }
             }
         }
     }

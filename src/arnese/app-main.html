@@ -16,7 +16,7 @@
 
         <app-content [aboutSection]="aboutSection"></app-content>
 
-        <div #content class="content_scroll" (click)="scrollPageStart()">
+        <div #content class="content_scroll" (click)="scrollPageAbout()">
             <div>{{ sk['about-section'] }}</div>
         </div>
 
@@ -25,14 +25,14 @@
 
     <div class="footer" >
 
-        <div #footer class="footer_before" (click)="scrollPageEnd()">
+        <div #footer class="footer_before" (click)="scrollPageContact()">
             <div>{{ sk['contact-section'] }}</div>
         </div>
 
         <div class="footer_wrapper">
-            <div class="footer_txt">
+            <div class="footer_txt" (click)="scrollPageProducts()">
                 <div *ngFor="let txt of sk['logo-txt']">
-                    <div></div>{{ txt }}
+                    <div>{{ txt }}</div>
                 </div>
             </div>
         </div>

@@ -10,11 +10,8 @@
     <div class="products-section">
         <div class="pdfs">
             <div class="list">
-
                 <div class="list__category" *ngFor="let categories of list">
-
                     <div class="list__category_title h1">{{ categories[0].category.name }}</div>
-
                     <a href="{{ pdf(item.name) }}" target="_blank" class="list__item" *ngFor="let item of categories">
                         <div class="list__item_brand">
                             <div class="h1">{{ item.brand.name }}</div>
@@ -27,14 +24,12 @@
                             <img class="img" src="{{ img('img.png') }}" />
                         </div>
                     </a>
-
                 </div>
-
             </div>
         </div>
     </div>
-    
-    <div class="contact-section">
+
+    <div *ngIf="!aboutSection" class="contact-section">
         <div>
             <div class="contact">
                 <div class="contact_wrapper">
@@ -50,9 +45,7 @@
                     <div class="flex"></div>
 
                     <div *ngFor="let txts of sk['contact-section-txts']">
-                        <div class="txt">{{ txts[0] }}</div>
-                        <div class="txt">{{ txts[1] }}</div>
-                        <div class="txt">{{ txts[2] }}</div>
+                        <div class="txt" *ngFor="let txt of txts">{{ txt }}</div>
                     </div>
 
                     <div class="flex"></div>
@@ -60,5 +53,5 @@
             </div>
         </div>
     </div>
-   
+
 </div>

@@ -39,11 +39,11 @@ export class ContentComponent {
     }
 
     public img(filename: string): string {
-        return 'arnese/assets/img/' + filename;
+        return 'assets/img/' + filename;
     }
 
     public pdf(filename: string): string {
-        return 'arnese/assets/pdf/' + filename + '.pdf';
+        return 'assets/pdf/' + filename + '.pdf';
     }
 
 }
