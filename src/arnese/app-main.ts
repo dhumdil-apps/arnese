@@ -66,17 +66,17 @@ export class MainComponent implements AfterViewInit {
     private scroll(): void {
 
         this.browser.style['scroll-top'] = this.getScrollTop();
-        this.aboutSection = (this.browser.style['scroll-top'] < this.browser.style['height'] + 100);
 
         if (this.browser.style['scroll-top'] >= 99) {
 
-            this.header.nativeElement.offsetParent.style.transform = 'translateY(-100%)';
+            this.aboutSection = (this.browser.style['scroll-top'] < (this.browser.style['height'] + 100));
+
             this.header.nativeElement.style.borderTop = '51px solid #333';
-
-            this.content.nativeElement.style.display = 'none';
-
-            this.footer.nativeElement.offsetParent.style.transform = 'translateY(100%)';
             this.footer.nativeElement.style.borderBottom = '51px solid #333';
+
+            this.header.nativeElement.offsetParent.style.transform = 'translateY(-100%)';
+            this.content.nativeElement.style.display = 'none';
+            this.footer.nativeElement.offsetParent.style.transform = 'translateY(100%)';
 
         } else {
 

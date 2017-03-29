@@ -1,101 +1,142 @@
-import { BRANDS, Brand } from './brand.model';
-import { CATEGORIES, Category } from './category.model';
-
 export const PDFs: Pdf[] = [
     {
-        'name': 'STIMZET-nastroje_na_obrabanie_otvorov',
-        'brand': BRANDS[1],
-        'category': CATEGORIES[0]
+        'title': 'Nástroje na obrábanie otvorov',
+        'filenames': [
+            {
+                'id': 'STIMZET-nastroje_na_obrabanie_otvorov',
+                'desc': '...'
+            }
+        ]
     },
     {
-        'name': 'NAREX-nastroje_na_rezanie_zavitov',
-        'brand': BRANDS[2],
-        'category': CATEGORIES[1]
+        'title': 'Nástroje na rezanie závitov',
+        'filenames': [
+            {
+                'id': 'NAREX-nastroje_na_rezanie_zavitov',
+                'desc': 'závitníky'
+            },
+            {
+                'id': 'BUCOVICE-nastroje_na_rezanie_zavitov',
+                'desc': 'závitníky a závitové kruhové čeľuste'
+            }
+        ]
     },
     {
-        'name': 'BUCOVICE-nastroje_na_rezanie_zavitov',
-        'brand': BRANDS[3],
-        'category': CATEGORIES[1]
+        'title': 'Nástroje na frézovanie',
+        'filenames': [
+            {
+                'id': 'ZPS-nastroje_na_frezovanie',
+                'desc': 'frézy'
+            }
+        ]
     },
     {
-        'name': 'ZPS-nastroje_na_frezovanie',
-        'brand': BRANDS[4],
-        'category': CATEGORIES[2]
+        'title': 'Upínacie náradie',
+        'filenames': [
+            {
+                'id': 'TOS-sklicidla',
+                'desc': 'skľúčovadlá'
+            },
+            {
+                'id': 'PILANA-katalog_1_cz',
+                'desc': 'držiaky, skľučovadlá, upínače, tŕne, púzdra'
+            },
+            {
+                'id': 'PILANA-katalog_2_cz',
+                'desc': '...'
+            },
+            {
+                'id': 'PILANA-katalog_3_cz',
+                'desc': '...'
+            },
+            {
+                'id': 'PILANA-katalog_4_cz',
+                'desc': '...'
+            },
+            {
+                'id': 'PILSEN-otocne_hroty',
+                'desc': 'frézy'
+            },
+            {
+                'id': 'DEPRAG-kliestiny',
+                'desc': 'frézy'
+            },
+            {
+                'id': 'DEPRAG-rychl_hlavy',
+                'desc': 'frézy'
+            }
+        ]
     },
     {
-        'name': 'TOS-sklicidla',
-        'brand': BRANDS[5],
-        'category': CATEGORIES[3]
+        'title': 'Meradlá',
+        'filenames': [
+            {
+                'id': 'ARNESE-meradla',
+                'desc': '...'
+            }
+        ]
     },
     {
-        'name': 'PILANA-katalog_1_cz',
-        'brand': BRANDS[6],
-        'category': CATEGORIES[3]
+        'title': 'Ručné náradie',
+        'filenames': [
+            {
+                'id': 'ARNESE-rucne_naradie',
+                'desc': '...'
+            }
+        ]
     },
     {
-        'name': 'PILANA-katalog_2_cz',
-        'brand': BRANDS[6],
-        'category': CATEGORIES[3]
+        'title': 'Brusivo',
+        'filenames': [
+            {
+                'id': 'TYROLIT-brusivo',
+                'desc': '...'
+            },
+            {
+                'id': 'URDIAMANT-brusivo',
+                'desc': '...'
+            }
+        ]
     },
     {
-        'name': 'PILANA-katalog_3_cz',
-        'brand': BRANDS[6],
-        'category': CATEGORIES[3]
+        'title': 'Nástroje na sústruženie',
+        'filenames': [
+            {
+                'id': 'ARNESE-sustruh',
+                'desc': '...'
+            }
+        ]
     },
     {
-        'name': 'PILANA-katalog_4_cz',
-        'brand': BRANDS[6],
-        'category': CATEGORIES[3]
+        'title': 'Tvrdokovové nástroje',
+        'filenames': [
+            {
+                'id': '',
+                'desc': '...'
+            }
+        ]
     },
     {
-        'name': 'PILSEN-otocne_hroty',
-        'brand': BRANDS[7],
-        'category': CATEGORIES[3]
-    },
-    {
-        'name': 'DEPRAG-kliestiny',
-        'brand': BRANDS[8],
-        'category': CATEGORIES[3]
-    },
-    {
-        'name': 'DEPRAG-rychl_hlavy',
-        'brand': BRANDS[8],
-        'category': CATEGORIES[3]
-    },
-    {
-        'name': 'ARNESE-meradla',
-        'brand': BRANDS[0],
-        'category': CATEGORIES[4]
-    },
-    {
-        'name': 'ARNESE-rucne_naradie',
-        'brand': BRANDS[0],
-        'category': CATEGORIES[5]
-    },
-    {
-        'name': 'TYROLIT-brusivo',
-        'brand': BRANDS[9],
-        'category': CATEGORIES[6]
-    },
-    {
-        'name': 'URDIAMANT-brusivo',
-        'brand': BRANDS[10],
-        'category': CATEGORIES[6]
-    },
-    {
-        'name': 'ARNESE-sustruh',
-        'brand': BRANDS[0],
-        'category': CATEGORIES[7]
+        'title': 'VÝROBA A OSTRENIE REZNÉHO NÁRADIA',
+        'filenames': [
+            {
+                'id': '',
+                'desc': 'výroba štandardného a špeciálneho rezného náradia'
+            }
+        ]
     }
 ];
 
-/**
- * Model of a product
- */
 export class Pdf {
 
-    public name: string;
-    public brand: Brand;
-    public category: Category;
+    public title: string;
+    public filenames: Filename[];
+
+}
+
+export class Filename {
+
+    public id: string;
+    public desc: string;
 
 }

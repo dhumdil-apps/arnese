@@ -5,10 +5,21 @@ export const SK = {
         'Ponúkame komplexné riešenie výroby rezného náradia od návrhu koncepcie, cez výkresovú dokumentáciu, až po jeho výrobu a ostrenie vrátane povlaku.',
         'Ponúkame kusovú a malosériovú výrobu dielcov podľa požiadaviek zákazníka, podľa dodanej výkresovej dokumentácie a taktiež na základe požiadaviek zákazníka.'
     ],
-    'contact-section': 'Pavel Gazdík - konateľ',
+    'contact-section': 'ARNESE s.r.o.',
     'contact-section-txts': [
-        ['+421 915 823 595', 'arnese@arnese.sk'],
-        ['Internátna 57', '974 04 Banská Bystrica'],
-        ['IČO: 44 672 926', 'DIČ: 2022778626', 'IČ DPH: SK2022778626']
+        [
+            'Pavel Gazdík - konateľ',
+            '+421 915 823 595',
+            'arnese@arnese.sk'
+        ],
+        [
+            'Internátna 57',
+            '974 04 Banská Bystrica'
+        ],
+        [
+            'IČO: 44 672 926',
+            'DIČ: 2022778626',
+            'IČ DPH: SK2022778626'
+        ]
     ]
 };

@@ -10,21 +10,21 @@
     <div class="products-section">
         <div class="pdfs">
             <div class="list">
-                <div class="list__category" *ngFor="let categories of list">
-                    <div class="list__category_title h1">{{ categories[0].category.name }}</div>
-                    <a href="{{ pdf(item.name) }}" target="_blank" class="list__item" *ngFor="let item of categories">
-                        <div class="list__item_brand">
-                            <div class="h1">{{ item.brand.name }}</div>
-                            <div>
-                                <img class="img" src="{{ img('Adobe_PDF.svg') }}" alt="PDF" />
-                                <div class="txt">{{ item.brand.desc }}</div>
-                            </div>
-                        </div>
-                        <div class="list__item_image">
-                            <img class="img" src="{{ img('img.png') }}" />
-                        </div>
-                    </a>
-                </div>
+                <!--<div class="list__category" *ngFor="let categories of list">-->
+                    <!--<div class="list__category_title h1">{{ categories[0].category.name }}</div>-->
+                    <!--<a href="{{ pdf(item.name) }}" target="_blank" class="list__item" *ngFor="let item of categories">-->
+                        <!--<div class="list__item_brand">-->
+                            <!--<div class="h1">{{ item.brand.name }}</div>-->
+                            <!--<div>-->
+                                <!--<img class="img" src="{{ img('Adobe_PDF.svg') }}" alt="PDF" />-->
+                                <!--<div class="txt">{{ item.brand.desc }}</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list__item_image">-->
+                            <!--<img class="img" src="{{ img('img.png') }}" />-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
