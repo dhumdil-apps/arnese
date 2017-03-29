@@ -71,24 +71,24 @@
 
         &_wrapper {
             display: flex;
-            max-width: 1024px;
-            margin: 50px auto 0 auto;
+            max-width: 768px;
+            margin: 0 auto;
 
             .h1 {
-                font-size: 18px;
+                font-size: 24px;
                 margin: 0 auto;
-                padding: 0;
+                text-align: center;
+                padding: 5px;
             }
         }
         &_txt {
-            margin: 0 auto 50px auto;
-            display: flex;
-            max-width: 1024px;
+            margin: 0 auto;
+            display: block;
+            max-width: 768px;
 
-            .h1 {
-                font-size: 20px;
-                margin: 0 auto;
-                padding: 5px;
+            &-list {
+                display: flex;
+                padding: 20px 0;
             }
             .txt {
                 font-family: 'Raleway SemiBold';
@@ -96,12 +96,11 @@
                 margin: 0 auto;
                 font-size: 16px;
             }
-            .a {
-                font-family: 'Raleway SemiBold';
-                padding: 5px;
-                margin: 0 auto;
-                font-size: 16px;
-                color: #000;
+            .img {
+                max-width: 100%;
+                max-height: 100%;
+                height: 100%;
+                margin-right: 20px;
             }
         }
     }
@@ -223,40 +222,23 @@
     }
     .contact-section {
         .contact_wrapper {
-            display: block;
             margin: 20px auto 0 auto;
 
             .h1 {
-                font-size: 24px;
-                margin: 0 auto;
-                padding: 0;
+                font-size: 18px;
             }
         }
         .contact_txt {
             margin: 0 auto 20px auto;
-            display: block;
 
-            > div {
-                margin: 10px;
-            }
-            .h1 {
-                font-size: 20px;
-                margin: 0 auto;
-                padding: 5px;
+            &-list {
+                padding: 5px 0;
             }
             .txt {
-                font-family: 'Raleway SemiBold';
-                padding: 5px;
-                margin: 0 auto;
-                font-size: 16px;
+                font-size: 14px;
             }
-            .a {
-                font-family: 'Raleway SemiBold';
-                padding: 5px;
-                margin: 0 auto;
-                font-size: 16px;
-                color: #eee;
-                text-decoration: none;
+            .img {
+                margin-right: 5px;
             }
         }
     }

@@ -33,22 +33,19 @@
         <div>
             <div class="contact">
                 <div class="contact_wrapper">
-                    <div class="flex"></div>
-                    <div>
-                        <div class="h1">{{ sk['contact-section'] }}</div>
-                    </div>
-                    <div class="flex"></div>
+                    <div class="h1">{{ sk['contact-section'] }}</div>
                 </div>
             </div>
             <div class="contact">
                 <div class="contact_txt">
-                    <div class="flex"></div>
-
-                    <div *ngFor="let txts of sk['contact-section-txts']">
-                        <div class="txt" *ngFor="let txt of txts">{{ txt }}</div>
+                    <div class="contact_txt-list" *ngFor="let txts of sk['contact-section-txts']">
+                        <a href="{{ txts['link'] }}" target="_blank">
+                            <img class="img" src="{{ img(txts['icon']) }}" alt="Icon" />
+                        </a>
+                        <div>
+                            <div class="txt" *ngFor="let txt of txts['txt']">{{ txt }}</div>
+                        </div>
                     </div>
-
-                    <div class="flex"></div>
                 </div>
             </div>
         </div>
