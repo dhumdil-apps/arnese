@@ -17,11 +17,11 @@ export class ContentComponent {
     @Input() aboutSection: boolean;
 
     public pdf(filename: string): string {
-        return 'arnese/assets/pdf/' + filename + '.pdf';
+        return 'assets/pdf/' + filename + '.pdf';
     }
 
     public img(filename: string): string {
-        return 'arnese/assets/img/' + filename;
+        return 'assets/img/' + filename;
     }
 
 }

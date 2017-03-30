@@ -105,108 +105,6 @@
         }
     }
 }
-.products-section {
-    .pdfs {
-        display: flex;
-        position: relative;
-        background-color: #333;
-        padding: 50px 0;
-        z-index: 50;
-        height: 800px;
-
-        > div {
-            max-width: 1024px;
-            margin: 0 auto;
-        }
-    }
-    .list {
-        position: relative;
-        width: 100%;
-        margin: 50px 0;
-
-        &__category {
-            position: relative;
-            display: block;
-
-            &_title {
-                padding: 50px 20px;
-                text-align: center;
-                color: #fff;
-            }
-            .h1 {
-                font-family: 'Raleway SemiBold';
-                margin: 10px 0;
-                font-size: 24px;
-                text-transform: uppercase;
-                color: #fff;
-            }
-        }
-        &__item {
-            background: #eee;
-            height: 200px;
-            width: 200px;
-            display: flex;
-            margin: 50px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 100ms ease;
-
-            .h1 {
-                font-family: 'Raleway SemiBold';
-                margin: 0 0 0 50px;
-                font-size: 18px;
-                text-transform: uppercase;
-                color: #000;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            .txt {
-                font-family: 'Raleway';
-                padding: 10px 0 0 0;
-                font-size: 14px;
-                color: #000;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            &_brand {
-                width: 50%;
-                margin: 10px;
-                position: relative;
-
-                > div {
-                    display: flex;
-                }
-                .img {
-                    margin-right: 20px;
-                    width: 30px;
-                    height: 30px;
-                }
-            }
-            &_image {
-                width: 50%;
-                color: #000;
-                text-decoration: none;
-                display: flex;
-
-                .img {
-                    margin: auto;
-                    max-width: 100%;
-                    max-height: 100%;
-                    width: auto;
-                    height: auto;
-                }
-            }
-            &:hover {
-                -webkit-box-shadow: 10px 10px 40px -10px #000;
-                -moz-box-shadow: 10px 10px 40px -10px #000;
-                box-shadow: 10px 10px 40px -10px #000;
-            }
-        }
-    }
-}
-
 @media screen and (max-width: 768px) {
     .about-section {
         .h1 {
@@ -242,32 +140,49 @@
             }
         }
     }
-    .products-section {
-        .list {
-            margin: 20px 0;
+}
 
-            &__category {
-                .h1 {
-                    font-size: 18px;
-                }
-            }
-            &__item {
-                max-width: 320px;
-                margin: 10px auto;
+.products-section {
+    display: flex;
+    position: relative;
+    background-color: #eee;
+    z-index: 50;
+    width: 100%;
 
-                .h1 {
-                    font-size: 14px;
-                }
-                .txt {
-                    font-size: 12px;
-                }
-                &_brand {
-                    width: 100%;
-                }
-                &_image {
-                    display: none;
-                }
-            }
-        }
+    .pdfs {
+        margin: 0 auto;
+        max-width: 1600px;
     }
+}
+
+.layout-row {
+    display: flex;
+}
+.layout-center {
+    margin: auto;
+}
+.flex-1 {
+    flex: 1;
+}
+.flex-2 {
+    flex: 2;
+}
+.flex-3 {
+    flex: 3;
+}
+.flex-4 {
+    flex: 4;
+}
+
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 320px) {
+
 }

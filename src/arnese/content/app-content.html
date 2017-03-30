@@ -9,23 +9,32 @@
 
     <div class="products-section">
         <div class="pdfs">
-            <div class="list">
-                <!--<div class="list__category" *ngFor="let categories of list">-->
-                    <!--<div class="list__category_title h1">{{ categories[0].category.name }}</div>-->
-                    <!--<a href="{{ pdf(item.name) }}" target="_blank" class="list__item" *ngFor="let item of categories">-->
-                        <!--<div class="list__item_brand">-->
-                            <!--<div class="h1">{{ item.brand.name }}</div>-->
-                            <!--<div>-->
-                                <!--<img class="img" src="{{ img('Adobe_PDF.svg') }}" alt="PDF" />-->
-                                <!--<div class="txt">{{ item.brand.desc }}</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="list__item_image">-->
-                            <!--<img class="img" src="{{ img('img.png') }}" />-->
-                        <!--</div>-->
-                    <!--</a>-->
-                <!--</div>-->
+
+            <div class="layout-row">
+                <div class="flex-3">
+                    <img class="img-{{pdfs[0].id[0]}}" src="{{ img(pdfs[0].id) }}" alt="{{ pdfs[0].id }}" />
+                    <img class="img-{{pdfs[9].id[0]}}" src="{{ img(pdfs[9].id) }}" alt="{{ pdfs[9].id }}" />
+                </div>
+                <img class="flex-2 img-{{pdfs[1].id[0]}}" src="{{ img(pdfs[1].id) }}" alt="{{ pdfs[1].id }}" />
             </div>
+
+            <div>
+                <div class="layout-row">
+                    <img class="flex-4 img-{{pdfs[6].id[0]}}" src="{{ img(pdfs[6].id) }}" alt="{{ pdfs[6].id }}" />
+                    <img class="flex-1 img-{{pdfs[7].id[0]}}" src="{{ img(pdfs[7].id) }}" alt="{{ pdfs[7].id }}" />
+                </div>
+                <div class="layout-row">
+                    <div class="flex-3">
+                        <div class="layout-row">
+                            <img class="flex-1 img-{{pdfs[2].id[0]}}" src="{{ img(pdfs[2].id) }}" alt="{{ pdfs[2].id }}" />
+                            <img class="flex-2 img-{{pdfs[5].id[0]}}" src="{{ img(pdfs[5].id) }}" alt="{{ pdfs[5].id }}" />
+                        </div>
+                        <img class="img-{{pdfs[4].id[0]}}" src="{{ img(pdfs[4].id) }}" alt="{{ pdfs[4].id }}" />
+                    </div>
+                    <img class="flex-2 img-{{pdfs[3].id[0]}}" src="{{ img(pdfs[3].id) }}" alt="{{ pdfs[3].id }}" />
+                </div>
+            </div>
+
         </div>
     </div>
 

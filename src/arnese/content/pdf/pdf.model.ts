@@ -1,5 +1,6 @@
 export const PDFs: Pdf[] = [
     {
+        'id': '1.jpg',
         'title': 'Nástroje na obrábanie otvorov',
         'filenames': [
             {
@@ -9,6 +10,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '2.png',
         'title': 'Nástroje na rezanie závitov',
         'filenames': [
             {
@@ -22,6 +24,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '3.png',
         'title': 'Nástroje na frézovanie',
         'filenames': [
             {
@@ -31,6 +34,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '4.png',
         'title': 'Upínacie náradie',
         'filenames': [
             {
@@ -68,6 +72,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '5.png',
         'title': 'Meradlá',
         'filenames': [
             {
@@ -77,6 +82,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '6.jpg',
         'title': 'Ručné náradie',
         'filenames': [
             {
@@ -86,6 +92,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '7.jpg',
         'title': 'Brusivo',
         'filenames': [
             {
@@ -99,6 +106,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '8.jpg',
         'title': 'Nástroje na sústruženie',
         'filenames': [
             {
@@ -108,6 +116,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '9.',
         'title': 'Tvrdokovové nástroje',
         'filenames': [
             {
@@ -117,6 +126,7 @@ export const PDFs: Pdf[] = [
         ]
     },
     {
+        'id': '10.jpg',
         'title': 'VÝROBA A OSTRENIE REZNÉHO NÁRADIA',
         'filenames': [
             {
@@ -129,6 +139,7 @@ export const PDFs: Pdf[] = [
 
 export class Pdf {
 
+    public id: string;
     public title: string;
     public filenames: Filename[];
 

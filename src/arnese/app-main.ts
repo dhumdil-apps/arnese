@@ -178,7 +178,7 @@ export class MainComponent implements AfterViewInit {
     }
 
     public img(filename: string): string {
-        return 'arnese/assets/img/' + filename;
+        return 'assets/img/' + filename;
     }
 
     private detectBrowser(): void {
