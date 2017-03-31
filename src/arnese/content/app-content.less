@@ -151,26 +151,34 @@
 
     .pdfs {
         margin: 0 auto;
-        max-width: 1600px;
+
+        &__block {
+            height: 1280px;
+            width: 1600px;
+        }
+        img {
+            display: none;
+        }
     }
 }
 
 .layout-row {
     display: flex;
 }
-.layout-center {
-    margin: auto;
-}
 .flex-1 {
+    background: red;
     flex: 1;
 }
 .flex-2 {
+    background: green;
     flex: 2;
 }
 .flex-3 {
+    background: blue;
     flex: 3;
 }
 .flex-4 {
+    background: yellow;
     flex: 4;
 }
 
