@@ -21,8 +21,8 @@
     .space {
         padding: 10px;
     }
-    .clear {
-        clear: both;
+    .visible {
+        visibility: visible;
     }
     .p-top_50 {
         padding-top: 50px;
@@ -61,6 +61,7 @@
     height: 100%;
     display: flex;
     background-color: #eee;
+    visibility: hidden;
 
     > div {
         margin: auto;
@@ -71,7 +72,6 @@
 
         &_wrapper {
             display: flex;
-            max-width: 768px;
             margin: 0 auto;
 
             .h1 {
@@ -84,7 +84,7 @@
         &_txt {
             margin: 0 auto;
             display: block;
-            max-width: 768px;
+            max-width: 1024px;
 
             &-list {
                 display: flex;
@@ -97,8 +97,7 @@
                 font-size: 16px;
             }
             .img {
-                max-width: 100%;
-                max-height: 100%;
+                width: auto;
                 height: 100%;
                 margin-right: 20px;
             }
@@ -118,47 +117,25 @@
             padding: 10px;
         }
     }
-    .contact-section {
-        .contact_wrapper {
-            margin: 20px auto 0 auto;
-
-            .h1 {
-                font-size: 18px;
-            }
-        }
-        .contact_txt {
-            margin: 0 auto 20px auto;
-
-            &-list {
-                padding: 5px 0;
-            }
-            .txt {
-                font-size: 14px;
-            }
-            .img {
-                margin-right: 5px;
-            }
-        }
-    }
 }
 
-.products-section {
+.pdfs-section {
     display: flex;
     position: relative;
-    background-color: #eee;
+    background-color: #333;
     z-index: 50;
-    width: 100%;
 
-    .pdfs {
-        margin: 0 auto;
-
-        &__block {
-            height: 1280px;
-            width: 1600px;
-        }
-        img {
-            display: none;
-        }
+    .block {
+        position: relative;
+        margin: 0 100px;
+        width: 1600px;
+        // height: 320px;
+        display: flex;
+    }
+    .item {
+        position: relative;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -166,31 +143,69 @@
     display: flex;
 }
 .flex-1 {
-    background: red;
     flex: 1;
+    height: 100%;
+    width: 100%;
 }
 .flex-2 {
-    background: green;
     flex: 2;
+    height: 100%;
+    width: 100%;
 }
 .flex-3 {
-    background: blue;
     flex: 3;
+    height: 100%;
+    width: 100%;
 }
 .flex-4 {
-    background: yellow;
     flex: 4;
+    height: 100%;
+    width: 100%;
 }
 
-@media screen and (max-width: 1920px) {
+/*
+<div class="pdfs">
 
-}
-@media screen and (max-width: 1024px) {
+            <div class="pdfs__block">
+                <div class="layout-row">
+                    <div class="flex-3">
+                        <!--<img class="img-{{pdfs[0].id[0]}}" src="{{ img(pdfs[0].id) }}" alt="{{ pdfs[0].id }}" />-->
+                        <!--<img class="img-{{pdfs[9].id[0]}}" src="{{ img(pdfs[9].id) }}" alt="{{ pdfs[9].id }}" />-->
+                    </div>
+                    <div class="flex-2">
+                        <!--<img class="img-{{pdfs[1].id[0]}}" src="{{ img(pdfs[1].id) }}" alt="{{ pdfs[1].id }}" />-->
+                    </div>
+                </div>
+            </div>
 
-}
-@media screen and (max-width: 768px) {
+            <div class="pdfs__block">
+                <div class="layout-row">
+                    <div class="flex-4">
+                        <!--<img class="img-{{pdfs[6].id[0]}}" src="{{ img(pdfs[6].id) }}" alt="{{ pdfs[6].id }}" />-->
+                    </div>
+                    <div class="flex-1">
+                        <!--<img class="img-{{pdfs[7].id[0]}}" src="{{ img(pdfs[7].id) }}" alt="{{ pdfs[7].id }}" />-->
+                    </div>
+                </div>
+                <div class="layout-row">
+                    <div class="flex-3">
+                        <div class="flex-1">
+                            <div class="flex-1">
+                                <!--<img class="img-{{pdfs[2].id[0]}}" src="{{ img(pdfs[2].id) }}" alt="{{ pdfs[2].id }}" />-->
+                            </div>
+                            <div class="flex-2">
+                                <!--<img class="img-{{pdfs[5].id[0]}}" src="{{ img(pdfs[5].id) }}" alt="{{ pdfs[5].id }}" />-->
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <!--<img class="img-{{pdfs[4].id[0]}}" src="{{ img(pdfs[4].id) }}" alt="{{ pdfs[4].id }}" />-->
+                        </div>
+                    </div>
+                    <div class="flex-2">
+                        <!--<img class="img-{{pdfs[3].id[0]}}" src="{{ img(pdfs[3].id) }}" alt="{{ pdfs[3].id }}" />-->
+                    </div>
+                </div>
+            </div>
 
-}
-@media screen and (max-width: 320px) {
-
-}
+        </div>
+*/

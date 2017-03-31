@@ -7,56 +7,19 @@
         </div>
     </div>
 
-    <div class="products-section">
-        <div class="pdfs">
-
-            <div class="pdfs__block">
-                <div class="layout-row">
-                    <div class="flex-3">3
-                        <img class="img-{{pdfs[0].id[0]}}" src="{{ img(pdfs[0].id) }}" alt="{{ pdfs[0].id }}" />
-                        <img class="img-{{pdfs[9].id[0]}}" src="{{ img(pdfs[9].id) }}" alt="{{ pdfs[9].id }}" />
-                    </div>
-                    <div class="flex-2">2
-                        <img class="img-{{pdfs[1].id[0]}}" src="{{ img(pdfs[1].id) }}" alt="{{ pdfs[1].id }}" />
-                    </div>
-                </div>
+    <div class="pdfs-section">
+        <div class="block">
+            <div class="flex-3">
+                <img class="item" src="{{ img(pdfs[0].id) }}" alt="{{ pdfs[0].id }}" />
+                <img class="item" src="{{ img(pdfs[9].id) }}" alt="{{ pdfs[9].id }}" />
             </div>
-
-            <div class="pdfs__block">
-                <div class="layout-row">
-                    <div class="flex-4">4
-                        <img class="img-{{pdfs[6].id[0]}}" src="{{ img(pdfs[6].id) }}" alt="{{ pdfs[6].id }}" />
-                    </div>
-                    <div class="flex-1">1
-                        <img class="img-{{pdfs[7].id[0]}}" src="{{ img(pdfs[7].id) }}" alt="{{ pdfs[7].id }}" />
-                    </div>
-                </div>
-                <div class="layout-row">
-                    <div class="flex-3">3
-                        <div class="layout-row">
-                            <div class="flex-1">1
-                                <img class="img-{{pdfs[2].id[0]}}" src="{{ img(pdfs[2].id) }}" alt="{{ pdfs[2].id }}" />
-                            </div>
-                            <div class="flex-2">2
-                                <img class="img-{{pdfs[5].id[0]}}" src="{{ img(pdfs[5].id) }}" alt="{{ pdfs[5].id }}" />
-                            </div>
-                        </div>
-                        <div class="layout-row">
-                            <div class="flex-1">1
-                                <img class="img-{{pdfs[4].id[0]}}" src="{{ img(pdfs[4].id) }}" alt="{{ pdfs[4].id }}" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-2">2
-                        <img class="img-{{pdfs[3].id[0]}}" src="{{ img(pdfs[3].id) }}" alt="{{ pdfs[3].id }}" />
-                    </div>
-                </div>
+            <div class="flex-2">
+                <img class="item" src="{{ img(pdfs[1].id) }}" alt="{{ pdfs[1].id }}" />
             </div>
-
         </div>
     </div>
 
-    <div *ngIf="!aboutSection" class="contact-section">
+    <div [ngClass]="{'visible': !aboutSection}" class="contact-section">
         <div>
             <div class="contact">
                 <div class="contact_wrapper">
@@ -79,3 +42,4 @@
     </div>
 
 </div>
+
