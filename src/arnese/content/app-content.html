@@ -7,8 +7,8 @@
         </div>
     </div>
 
-    <div class="pdfs-section">
-        <div class="block-1">
+    <div class="pdfs-section" #container>
+        <div class="block-1" #b1>
             <div class="flex-3">
                 <img class="item" src="{{ img(pdfs[0].id) }}" alt="{{ pdfs[0].id }}" />
                 <img class="item" src="{{ img(pdfs[9].id) }}" alt="{{ pdfs[9].id }}" />
@@ -17,7 +17,7 @@
                 <img class="item" src="{{ img(pdfs[1].id) }}" alt="{{ pdfs[1].id }}" />
             </div>
         </div>
-        <div class="block-2">
+        <div class="block-2" #b2>
             <div class="flex-4">
                 <img class="item" src="{{ img(pdfs[6].id) }}" alt="{{ pdfs[6].id }}" />
             </div>
@@ -25,7 +25,7 @@
                 <img class="item" src="{{ img(pdfs[7].id) }}" alt="{{ pdfs[7].id }}" />
             </div>
         </div>
-        <div class="block-3">
+        <div class="block-3" #b3>
             <div class="flex-3">
                 <div class="layout-row">
                     <img class="item" src="{{ img(pdfs[2].id) }}" alt="{{ pdfs[2].id }}" />
