@@ -1,4 +1,4 @@
-export const PDFs: Pdf[] = [
+export const PRODUCTS: Product[] = [
     {
         'id': '1.jpg',
         'title': 'Nástroje na obrábanie otvorov',
@@ -137,7 +137,7 @@ export const PDFs: Pdf[] = [
     }
 ];
 
-export class Pdf {
+export class Product {
 
     public id: string;
     public title: string;

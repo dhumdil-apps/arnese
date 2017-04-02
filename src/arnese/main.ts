@@ -1,17 +1,17 @@
-import { Component, HostListener, ViewChild, AfterViewInit } from '@angular/core';
+import {Component, HostListener, ViewChild, OnInit} from '@angular/core';
 import { SK } from './lang';
 
 @Component({
     selector: 'app-main',
-    templateUrl: './app-main.html',
-    styleUrls: ['./app-main.less']
+    templateUrl: './main.html',
+    styleUrls: ['./main.less']
 })
 
-export class MainComponent implements AfterViewInit {
+export class MainComponent implements OnInit {
 
     public sk: any = SK;
-    public browser: any = {};
-    public aboutSection = true;
+    public browser: any;
+    public section: any;
 
     @ViewChild('container') container;
     @ViewChild('header') header;
@@ -42,10 +42,17 @@ export class MainComponent implements AfterViewInit {
             }
         };
 
+        // TODO: disable the app on unknown and small browsers
+        this.section = {
+            'about': true,
+            'products': false,
+            'contact': false
+        };
+
         this.detectBrowser();
     }
 
-    ngAfterViewInit() {
+    ngOnInit() {
         this.resize();
         this.scroll();
         this.scrollTop();
@@ -69,7 +76,8 @@ export class MainComponent implements AfterViewInit {
 
         if (this.browser.style['scroll-top'] >= 99) {
 
-            this.aboutSection = (this.browser.style['scroll-top'] < (this.browser.style['height'] + 100));
+            this.section.products = true;
+            this.section.contact = !(this.browser.style['scroll-top'] < (this.browser.style['height'] + 100));
 
             this.header.nativeElement.style.borderTop = '51px solid #333';
             this.footer.nativeElement.style.borderBottom = '51px solid #333';
@@ -79,6 +87,8 @@ export class MainComponent implements AfterViewInit {
             this.footer.nativeElement.offsetParent.style.transform = 'translateY(100%)';
 
         } else {
+
+            this.section.products = false;
 
             this.header.nativeElement.offsetParent.style.transform = 'translateY(-' + this.browser.style['scroll-top'] + '%)';
             this.header.nativeElement.style.borderTop = '51px solid #eee';

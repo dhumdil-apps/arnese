@@ -1,0 +1,34 @@
+<div class="content_wrapper">
+
+    <div class="about-section">
+        <div>
+            <div class="h1">{{ sk['about-section'] }}</div>
+            <div class="txt" *ngFor="let txt of sk['about-section-txt']">{{ txt }}</div>
+        </div>
+    </div>
+
+    <app-products [width]="width"></app-products>
+
+    <div [ngClass]="{'visible': section.contact}" class="contact-section">
+        <div>
+            <div class="contact">
+                <div class="contact_wrapper">
+                    <div class="h1">{{ sk['contact-section'] }}</div>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="contact_txt">
+                    <div class="contact_txt-list" *ngFor="let txts of sk['contact-section-txts']">
+                        <a href="{{ txts['link'] }}" target="_blank">
+                            <img class="img" src="{{ img(txts['icon']) }}" alt="Icon" />
+                        </a>
+                        <div>
+                            <div class="txt" *ngFor="let txt of txts['txt']">{{ txt }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
