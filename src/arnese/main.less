@@ -30,25 +30,28 @@
         }
     }
     &_after {
-        display: block;
-        position: absolute;
-        bottom: -50px;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-left: 0 solid transparent;
-        border-right: 0 solid transparent; // js (on-resize)
-        border-top: 51px solid #eee; // js (on-scroll)
-        cursor: pointer;
-        transition: all 100ms ease-out;
+        display: flex;
+        background: #333;
 
         > div {
-            position: absolute;
-            left: 10px;
-            bottom: 20px;
-            text-transform: uppercase;
-            color: #eee;
-            font-family: 'Raleway SemiBold';
+            margin: 0 auto;
+            display: flex;
+
+            > div {
+                display: flex;
+                text-transform: uppercase;
+                color: #aaa;
+                cursor: pointer;
+                height: 50px;
+                margin: 0 10px;
+
+                > span {
+                    margin: auto 10px;
+                }
+                &:hover {
+                    color: #fff;
+                }
+            }
         }
     }
 }
@@ -58,26 +61,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: 0px; // js (on-resize)
-    margin-bottom: 0px; // js (on-resize)
+
 
     &_scroll {
         position: fixed;
-        left: 0;
         top: 0;
-        width: 100%;
+        left: 0;
         height: 100%;
+        width: 100%;
         background: #333;
-        display: flex;
-        cursor: pointer;
-
-        > div {
-            text-transform: uppercase;
-            margin: auto;
-            color: #eee;
-            font-size: 24px;
-            font-family: 'Raleway SemiBold';
-        }
     }
 }
 
@@ -96,48 +88,16 @@
         background: #eee;
         display: flex;
     }
-    &_before {
-        display: block;
-        position: absolute;
-        top: -50px;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-left: 0 solid transparent; // js (on-resize)
-        border-right: 0 solid transparent;
-        border-bottom: 51px solid #eee; // js (on-scroll)
-        cursor: pointer;
-        transition: all 100ms ease-out;
-
-        > div {
-            position: absolute;
-            color: #eee;
-            top: 20px;
-            right: 10px;
-            text-transform: uppercase;
-            font-family: 'Raleway SemiBold';
-        }
-    }
     &_txt {
-        cursor: pointer;
         position: relative;
         margin: auto;
+
         > div {
             padding: 10px;
             color: #333;
             font-size: 24px;
             text-transform: uppercase;
             text-align: center;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .footer {
-        &_txt {
-            > div {
-                font-size: 16px;
-            }
         }
     }
 }

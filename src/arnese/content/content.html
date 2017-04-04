@@ -2,28 +2,28 @@
 
     <div class="about-section">
         <div>
-            <div class="h1">{{ sk['about-section'] }}</div>
-            <div class="txt" *ngFor="let txt of sk['about-section-txt']">{{ txt }}</div>
+            <div class="h1">{{ main.lang['about-section'] }}</div>
+            <div class="txt" *ngFor="let row of main.lang['about-section-txt']">{{ row }}</div>
         </div>
     </div>
 
-    <app-products [width]="width"></app-products>
+    <app-items *ngIf="section.items"></app-items>
 
-    <div [ngClass]="{'visible': section.contact}" class="contact-section">
+    <div *ngIf="section.items" [ngClass]="{'visible': section.contact}" class="contact-section">
         <div>
             <div class="contact">
                 <div class="contact_wrapper">
-                    <div class="h1">{{ sk['contact-section'] }}</div>
+                    <div class="h1">{{ main.lang['contact-section'] }}</div>
                 </div>
             </div>
             <div class="contact">
                 <div class="contact_txt">
-                    <div class="contact_txt-list" *ngFor="let txts of sk['contact-section-txts']">
-                        <a href="{{ txts['link'] }}" target="_blank">
-                            <img class="img" src="{{ img(txts['icon']) }}" alt="Icon" />
+                    <div class="contact_txt-list" *ngFor="let rows of main.lang['contact-section-txts']">
+                        <a href="{{ rows['link'] }}" target="_blank">
+                            <img class="img" src="{{ main.assets.images + rows['icon'] }}" alt="Icon" />
                         </a>
                         <div>
-                            <div class="txt" *ngFor="let txt of txts['txt']">{{ txt }}</div>
+                            <div class="txt" *ngFor="let txt of rows['txt']">{{ txt }}</div>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,132 @@
+<div class="main.items" #container>
+
+    <div class="row">
+        <div class="col">
+
+            <div class="item">
+                <img src="{{ main.assets.images + main.items[0].id }}"
+                     alt="{{ main.items[0].id }}"
+                     width="{{ size(3) }}"
+                     height="{{ size(2) }}"
+                />
+                <div class="desc">
+                    <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[0].pdfs">
+                        <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ main.assets.images + main.items[9].id }}"
+                     alt="{{ main.items[9].id }}"
+                     width="{{ size(3) }}"
+                     height="{{ size(2) }}"
+                />
+                <div class="desc">
+                    <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[9].pdfs">
+                        <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="item">
+                <img src="{{ main.assets.images + main.items[1].id }}"
+                     alt="{{ main.items[1].id }}"
+                     width="{{ size(2) }}"
+                     height="{{ size(3) }}"
+                />
+                <div class="desc">
+                    <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[1].pdfs">
+                        <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ main.assets.images + main.items[7].id }}"
+                     alt="{{ main.items[7].id }}"
+                     width="{{ size(2) }}"
+                     height="{{ size(1) }}"
+                />
+                <div class="desc">
+                    <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[7].pdfs">
+                        <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="item">
+            <img src="{{ main.assets.images + main.items[6].id }}"
+                 alt="{{ main.items[6].id }}"
+                 width="{{ size(5) }}"
+                 height="{{ size(2.5) }}"
+            />
+            <div class="desc">
+                <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[6].pdfs">
+                    <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <div class="row">
+                <div class="item">
+                    <img src="{{ main.assets.images + main.items[2].id }}"
+                         alt="{{ main.items[2].id }}"
+                         width="{{ size(1) }}"
+                         height="{{ size(1) }}"
+                    />
+                    <div class="desc">
+                        <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[2].pdfs">
+                            <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ main.assets.images + main.items[5].id }}"
+                         alt="{{ main.items[5].id }}"
+                         width="{{ size(2) }}"
+                         height="{{ size(1) }}"
+                    />
+                    <div class="desc">
+                        <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[5].pdfs">
+                            <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ main.assets.images + main.items[4].id }}"
+                     alt="{{ main.items[4].id }}"
+                     width="{{ size(3) }}"
+                     height="{{ size(1) }}"
+                />
+                <div class="desc">
+                    <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[4].pdfs">
+                        <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="{{ main.assets.images + main.items[3].id }}"
+                 alt="{{ main.items[3].id }}"
+                 width="{{ size(2) }}"
+                 height="{{ size(2) }}"
+            />
+            <div class="desc">
+                <a href="{{ desc.id.length > 0 ? (main.assets.pdfs + desc.id + '.pdf') : '#' }}" target="_blank" class="desc__pdf" *ngFor="let desc of main.items[3].pdfs">
+                    <div *ngIf="desc.id.length > 0">{{ desc.desc.length > 0 ? desc.desc : 'PDF' }}</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>

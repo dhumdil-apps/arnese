@@ -1,4 +1,4 @@
-import {Component, HostListener, ViewChild, OnInit} from '@angular/core';
+import { Component, HostListener, ViewChild, OnInit } from '@angular/core';
 import { SK } from './lang';
 
 @Component({
@@ -9,9 +9,7 @@ import { SK } from './lang';
 
 export class MainComponent implements OnInit {
 
-    public sk: any = SK;
-    public browser: any;
-    public section: any;
+    public main: any;
 
     @ViewChild('container') container;
     @ViewChild('header') header;
@@ -29,24 +27,36 @@ export class MainComponent implements OnInit {
 
     constructor() {
 
-        this.browser = {
-            'type': {
-                'webkit': false,
-                'moz': false
+        this.main = {
+            'lang': SK,
+            'assets': {
+                // paths
+                'images': 'assets/img/',
+                'pdfs': 'assets/pdf/'
             },
-            'style': {
-                'content-margin': 0,
-                'scroll-top': 0,
-                'width': 0,
-                'height': 0
+            'section': {
+                'items': false,
+                // don't load all the images on page load,
+                // rather do it after scroll was initialized
+                // and moved at lest to about section
+                'contact': false
+            },
+            'browser': {
+                'type': {
+                    'webkit': false,
+                    // the default browser type
+                    'moz': false,
+                    // linux firefox exception
+                    'unknown': false
+                    // disable the app on unknown or very small browsers
+                },
+                'style': {
+                    'content-margin': 0,
+                    'scroll-top': 0,
+                    'width': 0,
+                    'height': 0
+                }
             }
-        };
-
-        // TODO: disable the app on unknown and small browsers
-        this.section = {
-            'about': true,
-            'products': false,
-            'contact': false
         };
 
         this.detectBrowser();
@@ -55,32 +65,32 @@ export class MainComponent implements OnInit {
     ngOnInit() {
         this.resize();
         this.scroll();
-        this.scrollTop();
     }
 
+    /**
+     * Watcher of the Browser Size
+     */
     private resize(): void {
 
-        this.browser.style['width'] = this.container.nativeElement.offsetParent.offsetWidth;
-        this.browser.style['height'] = this.getOffsetHeight();
+        this.main.browser.style['width'] = this.container.nativeElement.offsetParent.offsetWidth;
+        this.main.browser.style['height'] = this.getOffsetHeight();
 
-        this.header.nativeElement.style.borderRight = this.browser.style['width'] + 'px solid transparent';
-        this.page.nativeElement.style.marginTop = this.browser.style['height'] + 100 + 'px';
-        this.page.nativeElement.style.marginBottom = this.browser.style['height'] + 'px';
-        this.footer.nativeElement.style.borderLeft = this.browser.style['width'] + 'px solid transparent';
+        this.page.nativeElement.style.marginTop = this.main.browser.style['height'] + 100 + 'px';
+        this.page.nativeElement.style.marginBottom = this.main.browser.style['height'] + 'px';
 
     }
 
+    /**
+     * Watcher of the Scroll Event
+     */
     private scroll(): void {
 
-        this.browser.style['scroll-top'] = this.getScrollTop();
+        this.main.browser.style['scroll-top'] = this.getScrollTop();
 
-        if (this.browser.style['scroll-top'] >= 99) {
+        if (this.main.browser.style['scroll-top'] >= 100) {
 
-            this.section.products = true;
-            this.section.contact = !(this.browser.style['scroll-top'] < (this.browser.style['height'] + 100));
-
-            this.header.nativeElement.style.borderTop = '51px solid #333';
-            this.footer.nativeElement.style.borderBottom = '51px solid #333';
+            this.main.section.items = true;
+            this.main.section.contact = !(this.main.browser.style['scroll-top'] < (this.main.browser.style['height'] + 50));
 
             this.header.nativeElement.offsetParent.style.transform = 'translateY(-100%)';
             this.content.nativeElement.style.display = 'none';
@@ -88,145 +98,116 @@ export class MainComponent implements OnInit {
 
         } else {
 
-            this.section.products = false;
-
-            this.header.nativeElement.offsetParent.style.transform = 'translateY(-' + this.browser.style['scroll-top'] + '%)';
-            this.header.nativeElement.style.borderTop = '51px solid #eee';
+            this.header.nativeElement.offsetParent.style.transform = 'translateY(-' + this.main.browser.style['scroll-top'] + '%)';
 
             this.content.nativeElement.style.display = 'flex';
-            this.content.nativeElement.style.opacity = '' + (1 - Number('0.' + Math.floor(this.browser.style['scroll-top'] < 30 ? 0 : this.browser.style['scroll-top']) ));
+            this.content.nativeElement.style.opacity = '' + (1 - Number('0.' + Math.floor(this.main.browser.style['scroll-top'] < 30 ? 0 : this.main.browser.style['scroll-top']) ));
 
-            this.footer.nativeElement.offsetParent.style.transform = 'translateY(' + this.browser.style['scroll-top'] + '%)';
-            this.footer.nativeElement.style.borderBottom = '51px solid #eee';
+            this.footer.nativeElement.offsetParent.style.transform = 'translateY(' + this.main.browser.style['scroll-top'] + '%)';
 
         }
 
     }
 
-    public scrollTop(): void {
+    /**
+     * Simulate Scrolling
+     * @param section
+     */
+    public scrollToSection(section: string) {
 
-        let start = this.browser.style['scroll-top'] + 1;
-        const end = 0;
+        let start = this.main.browser.style['scroll-top'] + 1;
+        let end = 0;
 
-        const interval = setInterval(() => {
+        switch (section) {
+            case 'home':
+                end = 0;
+                break;
+            case 'about':
+                end = 100;
+                break;
+            case 'items':
+                end = this.main.browser.style['height'] + 50;
+                break;
+            case 'contact':
+                end = this.getScrollHeight() - this.getOffsetHeight();
+                break;
+            default:
+                break;
+        }
 
-            start = Math.floor(start / 1.1);
+        if (start > end) {
 
-            if (start > end) {
-                this.setScrollTop(start);
-            } else {
-                this.setScrollTop(end);
-                clearInterval(interval);
-            }
+            const interval = setInterval(() => {
 
-        }, 10);
+                start = Math.floor(start / 1.1);
 
-    }
+                if (start > end) {
+                    this.setScrollTop(start);
+                } else {
+                    this.setScrollTop(end);
+                    clearInterval(interval);
+                }
 
-    public scrollPageAbout(): void {
+            }, 10);
 
-        let start = this.browser.style['scroll-top'] + 1;
-        const end = 100;
-        let step = end;
+        } else {
 
-        const interval = setInterval(() => {
+            let step = end;
 
-            step = Math.floor(step / 1.001);
-            start += (end - step);
+            const interval = setInterval(() => {
 
-            if (start < end) {
-                this.setScrollTop(start);
-            } else {
-                this.setScrollTop(end);
-                clearInterval(interval);
-            }
+                step = Math.floor(step / 1.001);
+                start += (end - step);
 
-        }, 10);
+                if (start < end) {
+                    this.setScrollTop(start);
+                } else {
+                    this.setScrollTop(end);
+                    clearInterval(interval);
+                }
 
-    }
-    public scrollPageProducts(): void {
+            }, 10);
 
-        let start = this.browser.style['scroll-top'] + 1;
-        const end = this.browser.style['height'] + 100;
-        let step = end;
-
-        const interval = setInterval(() => {
-
-            step = Math.floor(step / 1.001);
-            start += (end - step);
-
-            if (start < end) {
-                this.setScrollTop(start);
-            } else {
-                this.setScrollTop(end);
-                clearInterval(interval);
-            }
-
-        }, 10);
-
-    }
-    public scrollPageContact(): void {
-
-        let start = this.browser.style['scroll-top'];
-        const end = this.getScrollHeight() - this.getOffsetHeight();
-        let step = end;
-
-        const interval = setInterval(() => {
-
-            step = Math.floor(step / 1.001);
-            start += (end - step);
-
-            if (start < end) {
-                this.setScrollTop(start);
-            } else {
-                this.setScrollTop(end);
-                clearInterval(interval);
-            }
-
-        }, 10);
+        }
 
     }
 
-    public img(filename: string): string {
-        return 'assets/img/' + filename;
-    }
-
+    /**
+     * Helpers
+     * - cross platform browser support
+     */
     private detectBrowser(): void {
         if (navigator.userAgent.indexOf('AppleWebKit') !== -1) {
-            this.browser.type['web-kit'] = true;
+            this.main.browser.type['web-kit'] = true;
         } else if (navigator.userAgent.indexOf('Mozilla') !== -1) {
-            this.browser.type['moz'] = true;
+            this.main.browser.type['moz'] = true;
         } else {
-            this.browser.type['web-kit'] = true;
+            this.main.browser.type['web-kit'] = true;
         }
     }
-
     private getOffsetHeight(): number {
-        if (this.browser.type['web-kit']) {
+        if (this.main.browser.type['web-kit']) {
             return this.container.nativeElement.offsetParent.offsetHeight;
         } else {
             return this.container.nativeElement.offsetParent.parentElement.offsetHeight;
         }
     }
-
     private getScrollTop(): number {
-        if (this.browser.type['web-kit']) {
+        if (this.main.browser.type['web-kit']) {
             return this.container.nativeElement.offsetParent.scrollTop;
         } else {
             return this.container.nativeElement.offsetParent.parentElement.scrollTop;
         }
     }
-
     private setScrollTop(px: number): void {
-        if (this.browser.type['web-kit']) {
+        if (this.main.browser.type['web-kit']) {
             this.container.nativeElement.offsetParent.scrollTop = px;
         } else {
             this.container.nativeElement.offsetParent.parentElement.scrollTop = px;
         }
     }
-
     private getScrollHeight(): number {
-        if (this.browser.type['web-kit']) {
+        if (this.main.browser.type['web-kit']) {
             return this.container.nativeElement.offsetParent.scrollHeight;
         } else {
             return this.container.nativeElement.offsetParent.parentElement.scrollHeight;

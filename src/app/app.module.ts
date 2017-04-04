@@ -8,11 +8,11 @@ import { AppComponent } from './app.component';
 
 import { MainComponent } from '../arnese/main';
 import { ContentComponent } from '../arnese/content/content';
-import { ProductsComponent } from '../arnese/content/products/products';
+import { ItemsComponent } from '../arnese/content/items/items';
 
 @NgModule({
     declarations: [
-        AppComponent, MainComponent, ContentComponent, ProductsComponent
+        AppComponent, MainComponent, ContentComponent, ItemsComponent
     ],
     imports: [
         BrowserModule, FormsModule, HttpModule, BrowserAnimationsModule

@@ -3,36 +3,44 @@
     <div class="header">
 
         <div class="header_wrapper">
-            <img class="img" src="{{ img('logo.png') }}" alt="Logo" />
+            <img class="img" src="{{ main.assets.images + 'logo.png' }}" alt="Logo" />
         </div>
 
-        <div #header class="header_after" (click)="scrollTop()">
-            <div>{{ sk['logo-name'] }}</div>
+        <div #header class="header_after">
+            <div>
+                <div (click)="scrollToSection('home')">
+                    <span>{{ main.lang['home-section'] }}</span>
+                </div>
+                <div (click)="scrollToSection('about')">
+                    <span>{{ main.lang['about-section'] }}</span>
+                </div>
+                <div (click)="scrollToSection('items')">
+                    <span>{{ main.lang['items-section'] }}</span>
+                </div>
+                <div (click)="scrollToSection('contact')">
+                    <span>{{ main.lang['contact-section'] }}</span>
+                </div>
+            </div>
         </div>
 
     </div>
 
     <div #page class="content">
 
-        <app-content [section]="section" [width]="browser.style.width"></app-content>
-
-        <div #content class="content_scroll" (click)="scrollPageAbout()">
-            <div>{{ sk['about-section'] }}</div>
-        </div>
+        <app-content [section]="main.section"></app-content>
+        <div #content class="content_scroll"></div>
 
     </div>
 
 
-    <div class="footer" >
+    <div class="footer">
 
-        <div #footer class="footer_before" (click)="scrollPageContact()">
-            <div>{{ sk['contact-section'] }}</div>
-        </div>
+        <div #footer class="footer_before"></div>
 
         <div class="footer_wrapper">
-            <div class="footer_txt" (click)="scrollPageProducts()">
-                <div *ngFor="let txt of sk['logo-txt']">
-                    <div>{{ txt }}</div>
+            <div class="footer_txt">
+                <div *ngFor="let row of main.lang['home-txt']">
+                    <div>{{ row }}</div>
                 </div>
             </div>
         </div>

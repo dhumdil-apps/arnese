@@ -1,8 +1,9 @@
 export const SK = {
-    'logo-name': 'Arnese',
-    'about-section': 'O spoločnosti',
+    'home-section': 'Arnese',
+    'about-section': 'O nás',
+    'items-section': 'Produkty',
     'contact-section': 'Kontakt',
-    'logo-txt': [
+    'home-txt': [
         'obchodná činnosť',
         'predaj nástrojov a náradia',
         'strojárska výroba'

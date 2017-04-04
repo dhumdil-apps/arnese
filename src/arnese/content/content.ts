@@ -10,13 +10,20 @@ import { SK } from './lang';
 
 export class ContentComponent {
 
-    public sk = SK;
+    public main: any;
 
     @Input() section;
-    @Input() width;
 
-    public img(filename: string): string {
-        return 'assets/img/' + filename;
+    constructor() {
+
+        this.main = {
+            'lang': SK,
+            'assets': {
+                'images': 'assets/img/',
+                'pdfs': 'assets/pdf/'
+            }
+        };
+
     }
 
 }

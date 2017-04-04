@@ -1,8 +1,8 @@
-export const PRODUCTS: Product[] = [
+export const ITEMS: Item[] = [
     {
         'id': '1.jpg',
         'title': 'Nástroje na obrábanie otvorov',
-        'filenames': [
+        'pdfs': [
             {
                 'id': 'STIMZET-nastroje_na_obrabanie_otvorov',
                 'desc': '...'
@@ -12,7 +12,7 @@ export const PRODUCTS: Product[] = [
     {
         'id': '2.png',
         'title': 'Nástroje na rezanie závitov',
-        'filenames': [
+        'pdfs': [
             {
                 'id': 'NAREX-nastroje_na_rezanie_zavitov',
                 'desc': 'závitníky'
@@ -26,7 +26,7 @@ export const PRODUCTS: Product[] = [
     {
         'id': '3.png',
         'title': 'Nástroje na frézovanie',
-        'filenames': [
+        'pdfs': [
             {
                 'id': 'ZPS-nastroje_na_frezovanie',
                 'desc': 'frézy'
@@ -36,7 +36,7 @@ export const PRODUCTS: Product[] = [
     {
         'id': '4.png',
         'title': 'Upínacie náradie',
-        'filenames': [
+        'pdfs': [
             {
                 'id': 'TOS-sklicidla',
                 'desc': 'skľúčovadlá'
@@ -47,15 +47,15 @@ export const PRODUCTS: Product[] = [
             },
             {
                 'id': 'PILANA-katalog_2_cz',
-                'desc': '...'
+                'desc': ''
             },
             {
                 'id': 'PILANA-katalog_3_cz',
-                'desc': '...'
+                'desc': ''
             },
             {
                 'id': 'PILANA-katalog_4_cz',
-                'desc': '...'
+                'desc': ''
             },
             {
                 'id': 'PILSEN-otocne_hroty',
@@ -63,18 +63,18 @@ export const PRODUCTS: Product[] = [
             },
             {
                 'id': 'DEPRAG-kliestiny',
-                'desc': 'frézy'
+                'desc': ''
             },
             {
                 'id': 'DEPRAG-rychl_hlavy',
-                'desc': 'frézy'
+                'desc': ''
             }
         ]
     },
     {
         'id': '5.png',
         'title': 'Meradlá',
-        'filenames': [
+        'pdfs': [
             {
                 'id': 'ARNESE-meradla',
                 'desc': '...'
@@ -84,7 +84,7 @@ export const PRODUCTS: Product[] = [
     {
         'id': '6.jpg',
         'title': 'Ručné náradie',
-        'filenames': [
+        'pdfs': [
             {
                 'id': 'ARNESE-rucne_naradie',
                 'desc': '...'
@@ -94,7 +94,7 @@ export const PRODUCTS: Product[] = [
     {
         'id': '7.jpg',
         'title': 'Brusivo',
-        'filenames': [
+        'pdfs': [
             {
                 'id': 'TYROLIT-brusivo',
                 'desc': '...'
@@ -108,7 +108,7 @@ export const PRODUCTS: Product[] = [
     {
         'id': '8.jpg',
         'title': 'Nástroje na sústruženie',
-        'filenames': [
+        'pdfs': [
             {
                 'id': 'ARNESE-sustruh',
                 'desc': '...'
@@ -116,36 +116,32 @@ export const PRODUCTS: Product[] = [
         ]
     },
     {
-        'id': '9.',
+        'id': '9',
         'title': 'Tvrdokovové nástroje',
-        'filenames': [
-            {
-                'id': '',
-                'desc': '...'
-            }
-        ]
+        'pdfs': []
     },
     {
         'id': '10.jpg',
         'title': 'VÝROBA A OSTRENIE REZNÉHO NÁRADIA',
-        'filenames': [
+        'pdfs': [
             {
                 'id': '',
                 'desc': 'výroba štandardného a špeciálneho rezného náradia'
+
             }
         ]
     }
 ];
 
-export class Product {
+export class Item {
 
     public id: string;
     public title: string;
-    public filenames: Filename[];
+    public pdfs: Pdf[];
 
 }
 
-export class Filename {
+export class Pdf {
 
     public id: string;
     public desc: string;
