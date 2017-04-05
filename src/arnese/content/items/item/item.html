@@ -1,0 +1,30 @@
+<div class="item" *ngIf="item.pdfs.length > 0">
+
+    <div class="img">
+        <img src="{{ assets.images + item.id }}"
+             width="{{ size(w) }}"
+             height="{{ size(h) }}"
+             alt="Product"
+        />
+    </div>
+
+    <div class="desc">
+
+        <div class="desc__title">{{ item.title }}</div>
+        <div class="desc__pdf">
+            <div class="desc__pdf_txt" *ngFor="let pdf of item.pdfs">
+
+                <div *ngIf="pdf.desc.length > 0"></div>
+                <span *ngIf="pdf.desc.length > 0">- {{ pdf.desc }}</span>
+                <div *ngIf="pdf.desc.length > 0"></div>
+
+                <a *ngIf="pdf.id.length > 0" href="{{ assets.pdfs + pdf.id + '.pdf' }}" target="_blank">
+                    <img src="{{ assets.images + 'pdf.svg' }}" alt="PDF" width="30" height="30" />
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

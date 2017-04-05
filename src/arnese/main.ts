@@ -28,11 +28,12 @@ export class MainComponent implements OnInit {
     constructor() {
 
         this.main = {
+            'init': false,
             'lang': SK,
             'assets': {
                 // paths
-                'images': 'assets/img/',
-                'pdfs': 'assets/pdf/'
+                'images': 'arnese/assets/img/',
+                'pdfs': 'arnese/assets/pdf/'
             },
             'section': {
                 'items': false,
@@ -48,13 +49,16 @@ export class MainComponent implements OnInit {
                     'moz': false,
                     // linux firefox exception
                     'unknown': false
-                    // disable the app on unknown or very small browsers
+                    // show plain text on unknown or very small browsers
                 },
                 'style': {
                     'content-margin': 0,
                     'scroll-top': 0,
                     'width': 0,
                     'height': 0
+                    // min-width 320
+                    // min-height 500
+                    // ELSE show plain text
                 }
             }
         };
@@ -65,6 +69,7 @@ export class MainComponent implements OnInit {
     ngOnInit() {
         this.resize();
         this.scroll();
+        this.main.init = true;
     }
 
     /**

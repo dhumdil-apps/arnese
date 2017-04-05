@@ -27,7 +27,7 @@
 
     <div #page class="content">
 
-        <app-content [section]="main.section"></app-content>
+        <app-content *ngIf="main.init" [section]="main.section"></app-content>
         <div #content class="content_scroll"></div>
 
     </div>

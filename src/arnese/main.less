@@ -57,11 +57,7 @@
 }
 
 .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-
+    position: relative;
 
     &_scroll {
         position: fixed;
@@ -98,6 +94,30 @@
             font-size: 24px;
             text-transform: uppercase;
             text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        &_after {
+            > div {
+                > div {
+                    margin: 0 5px;
+
+                    > span {
+                        font-size: 14px;
+                        margin: auto 5px;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        &_txt {
+            > div {
+                font-size: 14px;
+            }
         }
     }
 }

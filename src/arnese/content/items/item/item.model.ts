@@ -5,7 +5,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'STIMZET-nastroje_na_obrabanie_otvorov',
-                'desc': '...'
+                'desc': 'STIMZET',
             }
         ]
     },
@@ -15,11 +15,11 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'NAREX-nastroje_na_rezanie_zavitov',
-                'desc': 'závitníky'
+                'desc': 'závitníky',
             },
             {
                 'id': 'BUCOVICE-nastroje_na_rezanie_zavitov',
-                'desc': 'závitníky a závitové kruhové čeľuste'
+                'desc': 'závitníky a závitové kruhové čeľuste',
             }
         ]
     },
@@ -29,7 +29,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'ZPS-nastroje_na_frezovanie',
-                'desc': 'frézy'
+                'desc': 'frézy',
             }
         ]
     },
@@ -39,35 +39,35 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'TOS-sklicidla',
-                'desc': 'skľúčovadlá'
+                'desc': 'skľúčovadlá',
             },
             {
                 'id': 'PILANA-katalog_1_cz',
-                'desc': 'držiaky, skľučovadlá, upínače, tŕne, púzdra'
+                'desc': 'držiaky, skľučovadlá, upínače, tŕne, púzdra',
             },
             {
                 'id': 'PILANA-katalog_2_cz',
-                'desc': ''
+                'desc': '',
             },
             {
                 'id': 'PILANA-katalog_3_cz',
-                'desc': ''
+                'desc': '',
             },
             {
                 'id': 'PILANA-katalog_4_cz',
-                'desc': ''
+                'desc': '',
             },
             {
                 'id': 'PILSEN-otocne_hroty',
-                'desc': 'frézy'
+                'desc': 'frézy',
             },
             {
                 'id': 'DEPRAG-kliestiny',
-                'desc': ''
+                'desc': '',
             },
             {
                 'id': 'DEPRAG-rychl_hlavy',
-                'desc': ''
+                'desc': '',
             }
         ]
     },
@@ -77,7 +77,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'ARNESE-meradla',
-                'desc': '...'
+                'desc': 'ARNESE',
             }
         ]
     },
@@ -87,7 +87,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'ARNESE-rucne_naradie',
-                'desc': '...'
+                'desc': 'ARNESE',
             }
         ]
     },
@@ -97,11 +97,11 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'TYROLIT-brusivo',
-                'desc': '...'
+                'desc': 'TYROLIT',
             },
             {
                 'id': 'URDIAMANT-brusivo',
-                'desc': '...'
+                'desc': 'URDIAMANT',
             }
         ]
     },
@@ -111,7 +111,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'ARNESE-sustruh',
-                'desc': '...'
+                'desc': 'ARNESE',
             }
         ]
     },
@@ -126,8 +126,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': '',
-                'desc': 'výroba štandardného a špeciálneho rezného náradia'
-
+                'desc': 'výroba štandardného a špeciálneho rezného náradia',
             }
         ]
     }

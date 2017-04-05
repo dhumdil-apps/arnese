@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, HostListener } from '@angular/core';
 
-import { ITEMS } from './item.model';
+import { ITEMS } from './item/item.model';
 
 @Component({
     selector: 'app-items',
@@ -14,20 +14,17 @@ export class ItemsComponent {
 
     @ViewChild('container') container;
 
+    @HostListener('window:resize', ['$event']) onResize() {
+        this.main.width = this.container.nativeElement.offsetParent.clientWidth;
+    }
+
     constructor() {
 
         this.main = {
             'items': ITEMS,
-            'assets': {
-                'images': 'assets/img/',
-                'pdfs': 'assets/pdf/'
-            },
+            'width': 0
         };
 
-    }
-
-    public size(scale: number): number {
-        return this.container.nativeElement.offsetParent.clientWidth / 5 * scale;
     }
 
 }
