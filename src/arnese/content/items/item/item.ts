@@ -11,6 +11,7 @@ export class ItemComponent {
     public assets: any;
 
     @Input() item;
+    @Input() section;
     @Input() width;
     @Input() w;
     @Input() h;

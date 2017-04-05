@@ -1,4 +1,4 @@
-import { Component, ViewChild, HostListener, OnInit } from '@angular/core';
+import { Component, ViewChild, HostListener, OnInit, Input } from '@angular/core';
 
 import { ITEMS } from './item/item.model';
 
@@ -11,6 +11,8 @@ import { ITEMS } from './item/item.model';
 export class ItemsComponent implements OnInit {
 
     public main: any;
+
+    @Input() section;
 
     @ViewChild('container') container;
 

@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <app-items></app-items>
+    <app-items [section]="section.items"></app-items>
 
     <div [ngClass]="{'visible': section.contact}" class="contact-section">
         <div>
@@ -20,7 +20,7 @@
                 <div class="contact_txt">
                     <div class="contact_txt-list" *ngFor="let rows of main.lang['contact-section-txts']">
                         <a href="{{ rows['link'] }}" target="_blank">
-                            <img class="img" src="{{ main.assets.images + rows['icon'] }}" alt="Icon" />
+                            <img *ngIf="section.items" class="img" src="{{ main.assets.images + rows['icon'] }}" alt="Icon" />
                         </a>
                         <div>
                             <div class="txt" *ngFor="let txt of rows['txt']">{{ txt }}</div>

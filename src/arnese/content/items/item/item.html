@@ -1,7 +1,7 @@
 <div class="item" *ngIf="item.pdfs.length > 0">
 
     <div class="img">
-        <img src="{{ assets.images + item.id }}"
+        <img src="{{ section ? (assets.images + item.id) : '#' }}"
              alt="{{ item.id }}"
              width="{{ size(w) }}"
              height="{{ size(h) }}"
@@ -19,7 +19,7 @@
                 <div *ngIf="pdf.desc.length > 0"></div>
 
                 <a *ngIf="pdf.id.length > 0" href="{{ assets.pdfs + pdf.id + '.pdf' }}" target="_blank">
-                    <img src="{{ assets.images + 'pdf.svg' }}" alt="PDF" width="30" height="30" />
+                    <img src="{{ section ? (assets.images + 'pdf.svg') : '#' }}" alt="PDF" width="30" height="30" />
                 </a>
 
             </div>

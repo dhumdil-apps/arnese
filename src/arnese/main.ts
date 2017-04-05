@@ -35,7 +35,7 @@ export class MainComponent implements OnInit {
                 'pdfs': 'arnese/assets/pdf/'
             },
             'section': {
-                'items': true, // TODO: allocate space, don't load all at once
+                'items': false, // TODO: allocate space, don't load all at once
                 // don't load all the images on page load,
                 // rather do it after scroll was initialized
                 // and moved at lest to about section
@@ -92,6 +92,7 @@ export class MainComponent implements OnInit {
 
         if (this.main.browser.style['scroll-top'] >= 100) {
 
+            this.main.section.items = true;
             this.main.section.contact = !(this.main.browser.style['scroll-top'] < (this.main.browser.style['height'] + 50));
 
             this.header.nativeElement.offsetParent.style.transform = 'translateY(-100%)';
