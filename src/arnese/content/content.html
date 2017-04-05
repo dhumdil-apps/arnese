@@ -7,9 +7,9 @@
         </div>
     </div>
 
-    <app-items *ngIf="section.items"></app-items>
+    <app-items></app-items>
 
-    <div *ngIf="section.items" [ngClass]="{'visible': section.contact}" class="contact-section">
+    <div [ngClass]="{'visible': section.contact}" class="contact-section">
         <div>
             <div class="contact">
                 <div class="contact_wrapper">
