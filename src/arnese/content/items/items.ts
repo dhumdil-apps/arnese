@@ -1,4 +1,4 @@
-import { Component, ViewChild, HostListener } from '@angular/core';
+import { Component, ViewChild, HostListener, OnInit } from '@angular/core';
 
 import { ITEMS } from './item/item.model';
 
@@ -8,23 +8,29 @@ import { ITEMS } from './item/item.model';
     styleUrls: ['./items.less']
 })
 
-export class ItemsComponent {
+export class ItemsComponent implements OnInit {
 
     public main: any;
 
     @ViewChild('container') container;
 
     @HostListener('window:resize', ['$event']) onResize() {
-        this.main.width = this.container.nativeElement.offsetParent.clientWidth;
+        this.resize();
     }
 
     constructor() {
-
         this.main = {
             'items': ITEMS,
             'width': 0
         };
+    }
 
+    ngOnInit() {
+        this.resize();
+    }
+
+    private resize(): void {
+        this.main.width = this.container.nativeElement.offsetParent.clientWidth;
     }
 
 }
