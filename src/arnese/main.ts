@@ -28,7 +28,6 @@ export class MainComponent implements OnInit {
     constructor() {
 
         this.main = {
-            'init': false,
             'lang': SK,
             'assets': {
                 // paths
@@ -69,7 +68,6 @@ export class MainComponent implements OnInit {
     ngOnInit() {
         this.resize();
         this.scroll();
-        this.main.init = true;
     }
 
     /**
