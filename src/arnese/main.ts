@@ -35,7 +35,7 @@ export class MainComponent implements OnInit {
                 'pdfs': 'arnese/assets/pdf/'
             },
             'section': {
-                'items': false,
+                'items': true, // TODO: allocate space, don't load all at once
                 // don't load all the images on page load,
                 // rather do it after scroll was initialized
                 // and moved at lest to about section
@@ -74,9 +74,6 @@ export class MainComponent implements OnInit {
      * Watcher of the Browser Size
      */
     private resize(): void {
-
-        this.main.section.items = true;
-        // TODO: allocate space, don't load all at once
 
         this.main.browser.style['width'] = this.container.nativeElement.offsetParent.offsetWidth;
         this.main.browser.style['height'] = this.getOffsetHeight();
