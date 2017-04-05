@@ -75,11 +75,14 @@ export class MainComponent implements OnInit {
      */
     private resize(): void {
 
+        this.main.section.items = true;
+        // TODO: allocate space, don't load all at once
+
         this.main.browser.style['width'] = this.container.nativeElement.offsetParent.offsetWidth;
         this.main.browser.style['height'] = this.getOffsetHeight();
 
-        this.page.nativeElement.style.marginTop = this.main.browser.style['height'] + 100 + 'px';
-        this.page.nativeElement.style.marginBottom = this.main.browser.style['height'] + 'px';
+        this.page.nativeElement.style.marginTop = (this.main.browser.style['height'] + 100) + 'px';
+        this.page.nativeElement.style.marginBottom = (this.main.browser.style['height']) + 'px';
 
     }
 
@@ -92,7 +95,6 @@ export class MainComponent implements OnInit {
 
         if (this.main.browser.style['scroll-top'] >= 100) {
 
-            this.main.section.items = true;
             this.main.section.contact = !(this.main.browser.style['scroll-top'] < (this.main.browser.style['height'] + 50));
 
             this.header.nativeElement.offsetParent.style.transform = 'translateY(-100%)';
