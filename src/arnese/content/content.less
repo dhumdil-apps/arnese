@@ -99,8 +99,14 @@ app-items {
             max-width: 1024px;
 
             &-list {
+                position: relative;
                 display: flex;
                 padding: 20px 0;
+
+                > div {
+                    position: relative;
+                    display: block;
+                }
             }
             .txt {
                 font-family: 'Raleway SemiBold';
@@ -108,7 +114,11 @@ app-items {
                 margin: 0 auto;
                 font-size: 16px;
             }
+            a {
+                display: block;
+            }
             .img {
+                position: relative;
                 width: auto;
                 height: 100%;
                 margin-right: 20px;
