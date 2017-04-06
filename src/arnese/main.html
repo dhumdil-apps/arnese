@@ -25,9 +25,11 @@
 
     </div>
 
-    <div #page class="content">
+    <div class="content">
 
-        <app-content [section]="main.section"></app-content>
+        <div #page>
+            <app-content [section]="main.section"></app-content>
+        </div>
         <div #content class="content_scroll"></div>
 
     </div>

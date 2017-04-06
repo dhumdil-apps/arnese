@@ -40,7 +40,7 @@
             > div {
                 display: flex;
                 text-transform: uppercase;
-                color: #aaa;
+                color: #fff;
                 cursor: pointer;
                 height: 50px;
                 margin: 0 10px;
@@ -48,20 +48,18 @@
                 > span {
                     margin: auto 10px;
                 }
-                &:hover {
-                    color: #fff;
-                }
             }
         }
     }
 }
 
 .content {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+    position: relative;
 
+    app-content {
+        position: relative;
+        display: block;
+    }
     &_scroll {
         position: fixed;
         top: 0;
