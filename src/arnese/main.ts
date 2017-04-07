@@ -185,11 +185,12 @@ export class MainComponent implements OnInit {
     private detectBrowser(): void {
         if (navigator.userAgent.indexOf('AppleWebKit') !== -1) {
             this.main.browser.type['web-kit'] = true;
-        } else if (navigator.userAgent.indexOf('Mozilla') !== -1) {
-            this.main.browser.type['moz'] = true;
         } else {
             this.main.browser.type['web-kit'] = true;
         }
+    // else if (navigator.userAgent.indexOf('Mozilla') !== -1) {
+    //         this.main.browser.type['moz'] = true;
+    //     }
     }
     private getOffsetHeight(): number {
         if (this.main.browser.type['web-kit']) {
