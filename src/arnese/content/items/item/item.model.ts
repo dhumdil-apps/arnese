@@ -5,7 +5,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'STIMZET-nastroje_na_obrabanie_otvorov',
-                'desc': 'STIMZET',
+                'desc': ' ',
             }
         ]
     },
@@ -77,7 +77,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'ARNESE-meradla',
-                'desc': 'ARNESE',
+                'desc': ' ',
             }
         ]
     },
@@ -87,7 +87,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'ARNESE-rucne_naradie',
-                'desc': 'ARNESE',
+                'desc': ' ',
             }
         ]
     },
@@ -97,11 +97,11 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'TYROLIT-brusivo',
-                'desc': 'TYROLIT',
+                'desc': ' ',
             },
             {
                 'id': 'URDIAMANT-brusivo',
-                'desc': 'URDIAMANT',
+                'desc': ' ',
             }
         ]
     },
@@ -111,7 +111,7 @@ export const ITEMS: Item[] = [
         'pdfs': [
             {
                 'id': 'ARNESE-sustruh',
-                'desc': 'ARNESE',
+                'desc': ' ',
             }
         ]
     },

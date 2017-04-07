@@ -8,23 +8,62 @@
         />
     </div>
 
-    <div class="desc">
+    <div class="desc" *ngIf="item.pdfs.length === 1 && item.pdfs[0].id.length === 0">
 
-        <div class="desc__title">{{ item.title }}</div>
-        <div class="desc__pdf">
-            <div class="desc__pdf_txt" *ngFor="let pdf of item.pdfs">
+        <div class="row" style="height: 100%">
 
-                <div *ngIf="pdf.desc.length > 0"></div>
-                <span *ngIf="pdf.desc.length > 0">- {{ pdf.desc }}</span>
-                <div *ngIf="pdf.desc.length > 0"></div>
+            <div class="center">
+                <div class="desc__title">{{ item.title }}</div>
+                <div class="row">
+                    <div class="center" style="text-align: center" *ngIf="item.pdfs[0].desc.length > 0 && item.pdfs[0].desc !== ' '">{{ item.pdfs[0].desc }}</div>
+                </div>
+            </div>
 
-                <a *ngIf="pdf.id.length > 0" href="{{ assets.pdfs + pdf.id + '.pdf' }}" target="_blank">
-                    <img src="{{ section ? (assets.images + 'pdf.svg') : '#' }}" alt="PDF" width="30" height="30" />
-                </a>
+        </div>
 
+    </div>
+
+    <a class="desc" *ngIf="item.pdfs.length === 1 && item.pdfs[0].id.length > 0" href="{{ assets.pdfs + item.pdfs[0].id + '.pdf' }}" target="_blank">
+
+        <div class="row" style="height: 100%">
+
+            <div class="center">
+                <div class="desc__title">{{ item.title }}</div>
+                <div class="row">
+                    <div class="center row">
+                        <div class="center" style="text-align: center" *ngIf="item.pdfs[0].desc.length > 0 && item.pdfs[0].desc !== ' '">{{ item.pdfs[0].desc }}</div>
+                        <img class="center" *ngIf="item.pdfs[0].id.length > 0" src="{{ section ? (assets.images + 'pdf.svg') : '#' }}" alt="PDF" width="48" height="48" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+
+    <div class="desc" *ngIf="item.pdfs.length > 1">
+
+        <div class="row" style="height: 100%">
+            <div class="center">
+                <div class="desc__title">{{ item.title }}</div>
+                <div class="desc__pdf">
+
+                    <div class="desc__pdf_txt" *ngFor="let pdf of item.pdfs">
+
+                        <div *ngIf="pdf.desc.length > 0 && pdf.desc !== ' '">{{ pdf.desc }}</div>
+
+                        <a *ngIf="pdf.id.length > 0" href="{{ assets.pdfs + pdf.id + '.pdf' }}" target="_blank">
+                            <img src="{{ section ? (assets.images + 'pdf.svg') : '#' }}" alt="PDF" width="48" height="48" />
+                        </a>
+
+                    </div>
+
+                </div>
             </div>
         </div>
 
     </div>
+
 
 </div>

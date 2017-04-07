@@ -32,7 +32,7 @@ export class ItemsComponent implements OnInit {
     }
 
     private resize(): void {
-        this.main.width = this.container.nativeElement.offsetParent.clientWidth;
+        this.main.width = this.container.nativeElement.offsetParent.clientWidth - 200;
     }
 
 }

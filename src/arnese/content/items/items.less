@@ -1,26 +1,20 @@
 .items {
     position: relative;
+    margin: 0 100px;
 }
 
 app-item {
     position: relative;
     display: inherit;
+    margin: 1px;
 }
 
-.row {
-    display: flex;
+@media screen and (max-width: 1024px) {
+    .items {
+        margin: 0;
+        width: 100%;
+    }
+    .row {
+        width: 100%;
+    }
 }
-
-.col {
-    display: flex;
-    flex-direction: column;
-}
-
-//@media screen and (max-width: 768px) {
-//    .row {
-//        display: block;
-//    }
-//    .col {
-//        display: block;
-//    }
-//}

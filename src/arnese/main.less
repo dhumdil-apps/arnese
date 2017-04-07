@@ -7,7 +7,7 @@
 
     .space {
         position: relative;
-        height: 1px;
+        height: 50px;
     }
 }
 
@@ -104,26 +104,26 @@
     }
 }
 
-//@media screen and (max-width: 768px) {
-//    .header {
-//        &_after {
-//            > div {
-//                > div {
-//                    margin: 0 5px;
-//
-//                    > span {
-//                        font-size: 14px;
-//                        margin: auto 5px;
-//                    }
-//                }
-//            }
-//        }
-//    }
-//    .footer {
-//        &_txt {
-//            > div {
-//                font-size: 14px;
-//            }
-//        }
-//    }
-//}
+@media screen and (max-width: 1024px) {
+    .header {
+        &_after {
+            > div {
+                > div {
+                    margin: 0 5px;
+
+                    > span {
+                        font-size: 14px;
+                        margin: auto 5px;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        &_txt {
+            > div {
+                font-size: 14px;
+            }
+        }
+    }
+}

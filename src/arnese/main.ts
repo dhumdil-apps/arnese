@@ -33,14 +33,13 @@ export class MainComponent implements OnInit {
                 // paths
                 // 'images': 'assets/img/',
                 // 'pdfs': 'assets/pdf/'
-                // PROD
+                // PROD:
                 'images': 'arnese/assets/img/',
                 'pdfs': 'arnese/assets/pdf/'
             },
             'section': {
-                'items': false, // TODO: allocate space, don't load all at once
-                // don't load all the images on page load,
-                // rather do it after scroll was initialized
+                'items': false,
+                // load images after scroll was initialized
                 // and moved at lest to about section
                 'contact': false
             },
@@ -82,7 +81,7 @@ export class MainComponent implements OnInit {
         this.main.browser.style['height'] = this.getOffsetHeight();
 
         this.page.nativeElement.style.marginTop = (this.main.browser.style['height'] + 100) + 'px';
-        this.page.nativeElement.style.marginBottom = (this.main.browser.style['height']) + 'px';
+        this.page.nativeElement.style.marginBottom = this.main.browser.style['height'] + 'px';
 
     }
 
