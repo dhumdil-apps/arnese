@@ -7,7 +7,7 @@
 
     .space {
         position: relative;
-        height: 50px;
+        height: 1px;
     }
 }
 
@@ -51,6 +51,7 @@
                 margin: 0 10px;
 
                 > span {
+                    font-size: 28px;
                     margin: auto 10px;
                 }
             }
@@ -60,6 +61,7 @@
 
 .content {
     position: relative;
+    overflow: hidden;
 
     app-content {
         position: relative;
@@ -100,6 +102,27 @@
             font-size: 24px;
             text-transform: uppercase;
             text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .header {
+        &_after {
+            > div {
+                > div {
+                    > span {
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        &_txt {
+            > div {
+                font-size: 48px;
+            }
         }
     }
 }
