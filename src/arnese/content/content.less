@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     display: flex;
+    overflow: hidden;
 
     .h1 {
         font-family: 'Raleway SemiBold';
@@ -40,6 +41,7 @@
     height: 100%;
     display: flex;
     background: #eee;
+    overflow: hidden;
 
     > div {
         margin: auto;
@@ -63,6 +65,7 @@
     display: flex;
     background-color: #eee;
     visibility: hidden;
+    overflow: hidden;
 
     .contact {
         display: flex;
@@ -121,11 +124,11 @@ app-items {
     position: relative;
     background-color: #eee;
     z-index: 50;
+    overflow: hidden;
 }
 
 @media screen and (min-width: 1600px) {
     .about-section {
-        padding-bottom: 50px;
 
         > div {
             max-width: 1600px;
@@ -141,7 +144,6 @@ app-items {
         }
     }
     .contact-section {
-        padding-top: 50px;
 
         .contact {
 
@@ -176,9 +178,12 @@ app-items {
 
 @media screen and (max-width: 1024px) {
     .about-section {
+        overflow: hidden;
+
         > div {
             max-width: 320px;
             margin: auto;
+            overflow: hidden;
         }
         .h1 {
             text-align: center;
@@ -193,8 +198,11 @@ app-items {
         }
     }
     .contact-section {
+        overflow: hidden;
+
         .contact {
             max-width: 320px;
+            overflow: hidden;
         }
         .h1 {
             padding: 5px 0;

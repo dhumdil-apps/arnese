@@ -47,7 +47,7 @@ export class MainComponent implements OnInit {
                     'moz': false,
                     // linux firefox exception
                     'unknown': false
-                    // show plain text on unknown or very small browsers
+                    // ? show plain text on unknown or very small browsers
                 },
                 'style': {
                     'content-margin': 0,
@@ -56,7 +56,7 @@ export class MainComponent implements OnInit {
                     'height': 0
                     // min-width 320
                     // min-height 500
-                    // ELSE show plain text
+                    // ? ELSE show plain text
                 }
             }
         };
@@ -77,8 +77,8 @@ export class MainComponent implements OnInit {
         this.main.browser.style['width'] = this.container.nativeElement.offsetParent.offsetWidth;
         this.main.browser.style['height'] = this.getOffsetHeight();
 
-        this.page.nativeElement.style.marginTop = (this.main.browser.style['height'] + 100) + 'px';
-        this.page.nativeElement.style.marginBottom = this.main.browser.style['height'] + 'px';
+        this.page.nativeElement.style.marginTop = (this.main.browser.style['height'] + 150) + 'px';
+        this.page.nativeElement.style.marginBottom = (this.main.browser.style['height'] - 50) + 'px';
 
     }
 
