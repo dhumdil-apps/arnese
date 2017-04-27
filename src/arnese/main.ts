@@ -77,8 +77,8 @@ export class MainComponent implements OnInit {
         this.main.browser.style['width'] = this.container.nativeElement.offsetParent.offsetWidth;
         this.main.browser.style['height'] = this.getOffsetHeight();
 
-        this.page.nativeElement.style.marginTop = (this.main.browser.style['height'] + 150) + 'px';
-        this.page.nativeElement.style.marginBottom = (this.main.browser.style['height'] - 50) + 'px';
+        this.page.nativeElement.style.marginTop = (this.main.browser.style['height'] + 100) + 'px';
+        this.page.nativeElement.style.marginBottom = this.main.browser.style['height'] + 'px';
 
     }
 
