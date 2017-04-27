@@ -125,6 +125,8 @@ app-items {
 
 @media screen and (min-width: 1600px) {
     .about-section {
+        padding-bottom: 50px;
+
         > div {
             max-width: 1600px;
             margin: auto;
@@ -139,6 +141,8 @@ app-items {
         }
     }
     .contact-section {
+        padding-top: 50px;
+
         .contact {
 
             .h1 {
@@ -183,7 +187,8 @@ app-items {
         }
         .txt {
             text-align: center;
-            font-size: 14px;
+            line-height: 125%;
+            font-size: 16px;
             padding: 10px 0;
         }
     }
@@ -192,11 +197,15 @@ app-items {
             max-width: 320px;
         }
         .h1 {
+            padding: 5px 0;
             font-size: 18px;
         }
         .contact_txt {
+            &-list {
+                padding: 10px 0;
+            }
             .txt {
-                font-size: 14px;
+                font-size: 16px;
             }
             a {
                 display: flex;
@@ -204,8 +213,8 @@ app-items {
             .img {
                 margin: auto 20px auto 0;
                 position: relative;
-                width: 64px;
-                height: 64px;
+                width: 96px;
+                height: 96px;
             }
         }
     }

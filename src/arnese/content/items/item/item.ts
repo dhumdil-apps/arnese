@@ -19,9 +19,7 @@ export class ItemComponent {
     constructor() {
 
         this.assets = {
-            // 'images': 'assets/img/',
-            // 'pdfs': 'assets/pdf/'
-            // PROD
+            // paths
             'images': 'arnese/assets/img/',
             'pdfs': 'arnese/assets/pdf/'
         };
