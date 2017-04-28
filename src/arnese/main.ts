@@ -92,7 +92,7 @@ export class MainComponent implements OnInit {
         if (this.main.browser.style['scroll-top'] >= 100) {
 
             this.main.section.items = true;
-            this.main.section.contact = !(this.main.browser.style['scroll-top'] < (this.main.browser.style['height'] + 50));
+            this.main.section.contact = !(this.main.browser.style['scroll-top'] < (this.main.browser.style['height'] + 100));
 
             this.header.nativeElement.offsetParent.style.transform = 'translateY(-100%)';
             this.content.nativeElement.style.display = 'none';
