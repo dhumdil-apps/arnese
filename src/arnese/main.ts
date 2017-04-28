@@ -128,7 +128,7 @@ export class MainComponent implements OnInit {
                 end = 100;
                 break;
             case 'items':
-                end = this.main.browser.style['height'] + 50;
+                end = this.main.browser.style['height'] + 100;
                 break;
             case 'contact':
                 end = this.getScrollHeight() - this.getOffsetHeight();
