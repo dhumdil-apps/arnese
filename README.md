@@ -3,11 +3,13 @@
 - <a href="http://arnese.sk/">arnese.sk</a>
 - <a href="https://m16peter.github.io/arnese/">m16peter.github.io/arnese</a>
 
-## install locally
+## make sure you have at least:
+- <a href="https://nodejs.org/en/">Node v6.10 & npm 3.10</a>
+- <a href="https://github.com/angular/angular-cli">Angular CLI 1.0</a>
 
-- make sure you have latest version of angular and all it's dependecies from:
-<a href="https://github.com/angular/angular-cli">angular cli</a>
-- get and init the code:
-`
-git clone git@github.com:m16peter/arnese.git && cd arnese && sudo npm link
-`
+## get the code:
+`git clone https://github.com/m16peter/arnese.git`
+
+`cd arnese`
+
+`npm install`
