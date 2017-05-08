@@ -13,3 +13,5 @@
 `cd arnese`
 
 `npm install`
+
+`ng serve`
