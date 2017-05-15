@@ -20,8 +20,8 @@ export class ItemComponent {
 
         this.assets = {
             // paths
-            'images': 'arnese/assets/img/',
-            'pdfs': 'arnese/assets/pdf/'
+            'images': 'assets/img/',
+            'pdfs': 'assets/pdf/'
         };
 
     }

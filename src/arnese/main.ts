@@ -31,8 +31,8 @@ export class MainComponent implements OnInit {
             'lang': SK,
             'assets': {
                 // paths
-                'images': 'arnese/assets/img/',
-                'pdfs': 'arnese/assets/pdf/'
+                'images': 'assets/img/',
+                'pdfs': 'assets/pdf/'
             },
             'section': {
                 'items': false,

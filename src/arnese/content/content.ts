@@ -19,8 +19,8 @@ export class ContentComponent {
         this.main = {
             'lang': SK,
             'assets': {
-                'images': 'arnese/assets/img/',
-                'pdfs': 'arnese/assets/pdf/'
+                'images': 'assets/img/',
+                'pdfs': 'assets/pdf/'
             }
         };
 
