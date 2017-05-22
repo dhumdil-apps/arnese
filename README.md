@@ -1,6 +1,4 @@
-# Arnese
-
-- <a href="http://arnese.sk/">arnese.sk</a>>
+# <a href="http://arnese.sk/">Arnese</a>
 
 ## make sure you have at least:
 - <a href="https://nodejs.org/en/">Node v6.10 & npm 3.10</a>
