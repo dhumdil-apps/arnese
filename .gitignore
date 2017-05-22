@@ -1,6 +1,5 @@
 # compiled output
-/dist
-/tmp
+/docs
 
 # dependencies
 /node_modules
@@ -10,12 +9,5 @@
 *.sublime-workspace
 .vscode/*
 
-
 # misc
 npm-debug.log
-/typings
-
-
-#System Files
-.DS_Store
-Thumbs.db
