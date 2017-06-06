@@ -3,7 +3,11 @@
 # Get The Code
 
 ## requirements:
-- <a href="https://nodejs.org/en/">By the time i developed this i used: Node v6.10 & npm 3.10</a> & <a href="https://github.com/angular/angular-cli">Angular CLI 1.0</a>
+- By the time i developed this i used:
+
+<a href="https://nodejs.org/en/">Node v6.10 & npm 3.10</a>
+
+<a href="https://github.com/angular/angular-cli">Angular CLI 1.0</a>
 
 ## type in terminal:
 
