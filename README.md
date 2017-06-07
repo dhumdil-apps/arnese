@@ -11,18 +11,16 @@
 
 ## type in terminal:
 
-`# clone the project into arnese directory:`
+```bash
+# clone the project into arnese directory:
+git clone https://github.com/m16peter/arnese.git
 
-`git clone https://github.com/m16peter/arnese.git`
+# navigate to cloned directory:
+cd arnese
 
-`# navigate to cloned directory:`
+# install dependencies:
+npm install
 
-`cd arnese`
-
-`# install dependencies:`
-
-`npm install`
-
-`# start live development:`
-
-`ng serve`
+# start live development:
+ng serve
+```
