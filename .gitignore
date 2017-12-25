@@ -1,13 +1,5 @@
-# compiled output
-/docs
-
-# dependencies
+# Dependencies
 /node_modules
 
-# IDEs and editors
-/.idea
-*.sublime-workspace
-.vscode/*
-
-# misc
-npm-debug.log
+# Build
+/dist

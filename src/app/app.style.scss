@@ -1,0 +1,258 @@
+.page {
+  position: relative;
+  background: #333;
+  height: auto;
+  width: 100%;
+  border-top: 50px solid #fff;
+  z-index: 5;
+  box-shadow: 0 0 50px 20px rgba(255,255,255, 0.9);
+
+  > div {
+    width: 100%;
+
+    > div {
+      width: 100%;
+    }
+  }
+  .hr {
+    width: 1px;
+    height: 100%;
+  }
+  app-pdf {
+    position: relative;
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    will-change: transform;
+    transform: translateZ(0);
+    margin: 2px;
+  }
+}
+
+.section {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+
+  &_content {
+    margin: auto;
+  }
+  .about {
+    max-width: 960px;
+  }
+  .contact {
+
+    > div > div {
+      width: 500px;
+
+      > img {
+        margin: auto;
+      }
+      .txt {
+        font-size: 24px;
+        text-align: left;
+        line-height: 150%;
+      }
+    }
+  }
+}
+.active {
+  z-index: 2;
+}
+.empty {
+  z-index: 0;
+}
+
+.home {
+  position: fixed;
+  top: 0;
+  left:  0;
+  width: 100%;
+  height: calc(50% + 50px);
+  will-change: transform;
+  transform: translateY(0);
+  background: #fff;
+  z-index: 10;
+
+  .home-logo {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    will-change: transform;
+    transform: translateY(0);
+    z-index: 10;
+
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/assets/img/arnese.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  .nav {
+    position: relative;
+    background: #234082;
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+
+    .link {
+      position: relative;
+      text-transform: uppercase;
+      font-weight: bold;
+      overflow: hidden;
+      display: block;
+      font-size: 2em;
+      padding: 10px;
+      margin: 0 10px;
+      color: #fff;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 1px;
+        left: 0;
+        background: #fff;
+        transform: scaleX(0);
+        will-change: transform;
+        transition: transform 150ms ease-out;
+      }
+      &_active::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.home-description {
+  position: fixed;
+  top: calc(50% + 50px);
+  left:  0;
+  width: 100%;
+  height: calc(50% - 50px);
+  background: #fff;
+  z-index: 10;
+  border-top: 1px solid #234082;
+
+  .desc {
+    color: #234082;
+    font-size: 28px;
+    text-align: center;
+    margin: 5px 0;
+    text-transform: uppercase;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #124;
+  z-index: 9;
+}
+.h1 {
+  color: #234082;
+  font-size: 48px;
+  line-height: 125%;
+  padding: 50px 0;
+}
+.p {
+  line-height: 150%;
+  font-size: 24px;
+  padding: 20px 0;
+  text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .page {
+    background: #fff;
+  }
+  .section .contact > div > div > img {
+    max-height: 150px;
+  }
+}
+@media (max-width: 1023px) {
+  .page {
+
+    .layout-column, .layout-row {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    app-pdf {
+      display: block;
+      width: 100% !important;
+      height: 300px !important;
+      margin: 10px 0;
+    }
+  }
+  .section {
+    .about {
+      max-width: 500px;
+    }
+    .contact > div > div {
+      width: 500px;
+
+      .txt {
+        font-size: 24px;
+      }
+    }
+  }
+  .h1 {
+    font-size: 42px;
+  }
+}
+@media (max-width: 768px) {
+  .home .nav {
+    .flex {
+      flex: 0;
+    }
+    .link {
+      font-size: 16px;
+      padding: 20px 0;
+      margin: 0 auto;
+      font-weight: normal;
+    }
+  }
+  .section .about {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .section .contact > div > div {
+    width: 300px;
+
+    > img {
+      max-height: 64px;
+    }
+    .txt {
+      font-size: 16px;
+    }
+  }
+  .h1 {
+    padding: 10px 0;
+    font-size: 24px;
+  }
+  .p {
+    font-size: 16px;
+    padding: 5px 0;
+  }
+  .home-description .desc {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+}

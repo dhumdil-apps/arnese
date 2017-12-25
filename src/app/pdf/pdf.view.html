@@ -1,0 +1,22 @@
+<div class="item">
+  <div class="layout-center">
+
+    <div class="h1">{{ item.title }}</div>
+    <div class="p">{{ item.desc }}</div>
+
+    <div class="layout-row">
+      <div class="pdfs layout-row layout-center">
+
+        <div *ngFor="let pdfName of item.pdfs">
+
+          <a href="{{ '/assets/pdf/' + pdfName + '.pdf' }}" target="_blank">
+            <img src="/assets/img/pdf.svg" alt="PDF" width="48" height="48" title="{{ pdfName }}"/>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

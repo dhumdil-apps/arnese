@@ -1,0 +1,137 @@
+<!-- BACKDROP -->
+<div class="backdrop" *ngIf="(homeOpacity !== 0)" [style.opacity]="homeOpacity"></div>
+
+<!-- NAVIGATION -->
+<div class="home layout-column" [style.transform]="'translateY(' + ((height / 2 * homeOpacity) - (height / 2)) + 'px)'">
+  <div class="home-logo flex">
+    <div></div>
+  </div>
+  <div class="nav layout-row">
+    <div class="flex"></div>
+    <div class="link {{ section === 1 ? 'link_active' : '' }}" (click)="scrollTo('home')">{{ globals.home.section }}</div>
+    <div class="link {{ section === 2 ? 'link_active' : '' }}" (click)="scrollTo('about')">{{ globals.about.section }}</div>
+    <div class="link {{ section === 3 ? 'link_active' : '' }}" (click)="scrollTo('products')">{{ globals.products.section }}</div>
+    <div class="link {{ section === 4 ? 'link_active' : '' }}" (click)="scrollTo('contact')">{{ globals.contact.section }}</div>
+    <div class="flex"></div>
+  </div>
+</div>
+
+<!-- HOME -->
+<div class="home-description layout-column" [style.transform]="'translateY(' + ((height / 2) - (height / 2 * homeOpacity)) + 'px)'">
+  <div class="flex"></div>
+  <div class="flex"></div>
+  <div class="desc" *ngFor="let line of globals.home.desc">{{ line }}</div>
+  <div class="flex"></div>
+</div>
+
+<!-- HOME PLACEHOLDER -->
+<div class="empty" [style.height.px]="100"></div>
+
+<!-- ABOUT PLACEHOLDER -->
+<div class="empty" [style.height.px]="height"></div>
+
+<!-- PRODUCTS -->
+<div #page class="page">
+  <div>
+
+    <div class="layout-row">
+      <app-pdf
+        class                    = "flex"
+        [style.background-image] = "globals.products.items[1].img"
+        [item]                   = "globals.products.items[1]">
+      </app-pdf>
+      <div class="layout-column" [style.width]="sizeW(3.5)" [style.height]="sizeH(2)">
+        <div class="layout-row" [style.height] = "sizeH(1)">
+          <app-pdf
+            [style.background-image] = "globals.products.items[0].img"
+            [item]                   = "globals.products.items[0]"
+            [style.width]            = "sizeW(1.5)">
+          </app-pdf>
+          <app-pdf
+            class                    = "flex"
+            [style.background-image] = "globals.products.items[8].img"
+            [item]                   = "globals.products.items[8]">
+          </app-pdf>
+        </div>
+        <div class="layout-row" [style.height]="sizeH(2)">
+          <app-pdf
+            class                    = "flex"
+            [style.background-image] = "globals.products.items[3].img"
+            [item]                   = "globals.products.items[3]">
+          </app-pdf>
+          <app-pdf
+            [style.background-image] = "globals.products.items[7].img"
+            [item]                   = "globals.products.items[7]"
+            [style.width]            = "sizeW(1)">
+          </app-pdf>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout-row">
+      <div class="layout-column" [style.width]="sizeW(3)" [style.height]="sizeH(2)">
+        <div class="layout-row" [style.height]="sizeH(1)">
+          <app-pdf
+            class                    = "flex"
+            [style.background-image] = "globals.products.items[2].img"
+            [item]                   = "globals.products.items[2]">
+          </app-pdf>
+          <div class="hr"></div>
+          <app-pdf
+            class                    = "flex"
+            [style.background-image] = "globals.products.items[5].img"
+            [item]                   = "globals.products.items[5]">
+          </app-pdf>
+        </div>
+        <div class="layout-row flex" [style.width]="sizeW(3)">
+          <app-pdf
+            class                    = "flex"
+            [style.background-image] = "globals.products.items[4].img"
+            [item]                   = "globals.products.items[4]"
+            [style.height]           = "size">
+          </app-pdf>
+          <div class="hr"></div>
+        </div>
+      </div>
+      <app-pdf
+        class = "flex"
+        [style.background-image] = "globals.products.items[6].img"
+        [item]                   = "globals.products.items[6]">
+      </app-pdf>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT PLACEHOLDER -->
+<div class="empty" [style.height.px]="height - ((width < 1024) ? 60 : 50)"></div>
+
+<!-- ABOUT -->
+<div class="section layout-column {{ section <= 2 ? 'active' : '' }}" [style.height.px]="height">
+  <div class="flex"></div>
+  <div class="flex"></div>
+  <div class="about section_content">
+
+    <div class="h1">{{ globals.about.title }}</div>
+    <div class="p" *ngFor="let line of globals.about.desc">{{ line }}</div>
+
+  </div>
+  <div class="flex"></div>
+</div>
+
+<!-- CONTACT -->
+<div class="section layout-column" [style.height.px]="height">
+  <div class="flex"></div>
+  <div class="flex"></div>
+  <div class="contact section_content">
+    <div class="layout-column">
+      <div class="layout-row" *ngFor="let card of globals.contact.cards" [style.height.px]="height/4">
+        <img src="{{ card.icon }}" alt="Google Icon" height="100%" width="auto"/>
+        <div class="layout-center">
+          <div class="txt" *ngFor="let line of card.lines">{{ line }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex"></div>
+</div>
